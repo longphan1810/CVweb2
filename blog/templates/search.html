@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block title %} Search {% endblock %}
+
+
+
+{% block content %}
+
+<div class="row" style="margin:auto; margin-top: 20px;">
+    
+    <form style="margin:auto;" class="form-inline" action="" method="get" class="form-horizontal">
+       
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input style="border-radius: 50px; background-color: #0066CC; color: white; border: 0; margin-left: 10px;" type="submit" value="Search" />
+        
+    </form>
+    
+</div>
+
+<div style="margin:auto; margin-top: 20px;" >
+    
+    {% for post in result %}
+    <div class="row">
+    <div class="col-4" style="margin:auto; padding: 0;">   
+        <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width: 100%;"></a>
+    </div>
+    <div class="col-8" style="margin:auto">   
+        <a href="{% url 'blog:post' post.topic post.slug %}" style="color:#0066CC; text-align:justify" target="_blank">  {{ post.title }} </a>
+        <p style="text-align:justify">{{ post.opening|truncatewords:40 }} </p>
+    </div>
+    </div><br>
+    {% endfor %}
+    
+</div>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Đăng nhập {% endblock %}
+
+{% block content %}
+
+<div class="col-md-12" style="text-align: center; margin-top: 5%; color: #0066CC">
+    <form method="POST">
+        {% csrf_token %}
+        {% for key, value in form.errors.items %}
+            {{value}}
+        {% endfor %}
+        <p><label>Tài khoản:</label>{{form.username}}</p>
+        <p><label>Mật khẩu:</label>{{form.password}}</p>
+        <input type="hidden" name="next" value="/blog"/>
+        <input type="submit" value="Đăng nhập" style="color: white; background-color: #0066CC; border: 0; border-radius: 50px; padding: 3px 10px"/>
+    </form>
+</div>
+
+{% endblock %}

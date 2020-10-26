@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{% block title %}  {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'ava2.png' %}" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        
+    </style>
+    
+        {% block css %} {% endblock %}
+    
+    
+</head>
+<body style="background-color: rgb(238, 236, 236);">
+   <div id="slide" class="carousel slide" data-ride="carousel">
+       <!-- Indicators -->
+       <ul class="carousel-indicators">
+           <li data-target="#slide" data-slide-to="0" class="active"></li>
+           <li data-target="#slide" data-slide-to="1"></li>
+           <li data-target="#slide" data-slide-to="2"></li>
+           <li data-target="#slide" data-slide-to="3"></li>
+       </ul>
+     
+       <!-- The slideshow -->
+       <div class="carousel-inner" style="text-align:center">
+           <div class="carousel-item active">
+               <img src="{% static 'photo/slide/slide1.png' %}" style="width: 100%">
+           </div>
+           <div class="carousel-item">
+               <img src="{% static 'photo/slide/slide2.png' %}" style="width: 100%">
+           </div>
+           <div class="carousel-item">
+               <img src="{% static 'photo/slide/slide3.png' %}" style="width: 100%">
+           </div>
+           <div class="carousel-item">
+               <img src="{% static 'photo/slide/slide4.png' %}" style="width: 100%">
+           </div>
+       </div>
+     
+       <!-- Left and right controls -->
+       <a class="carousel-control-prev" href="#slide" data-slide="prev">
+         <span class="carousel-control-prev-icon"></span>
+       </a>
+       <a class="carousel-control-next" href="#slide" data-slide="next">
+         <span class="carousel-control-next-icon"></span>
+       </a>
+   </div>
+   
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color:#0066CC; margin: 0; padding: 0">
+        <div style="color: white; width: 30%; padding-left: 2%; vertical-align:-webkit-baseline-middle;">
+            {% if user.username %}
+                Xin chào {{user.username}}
+                <a href="{% url 'blog:logout' %}" style="color: white; margin-left: 5%">Đăng xuất</a>
+            {% else %}
+                <a href="{% url 'blog:register' %}" style="color: white;">Đăng ký</a> <span > &nbsp;|&nbsp; </span><a href="{% url 'blog:login' %}" style="color: white;">Đăng nhập</a>
+            {% endif %}
+        </div>
+        <!-- Brand -->
+        <a class="navbar-brand" href="/blog" style="margin-left: 0%"><img src="{% static 'ava.png' %}" style="width: 30px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav" style="width: 100%;">
+                <li class="nav-item" style="margin-left: 10%">
+                    <a class="nav-link" href="{% url 'blog:topic' 'code' %}" style="color: white;">LẬP TRÌNH</a>
+                </li>
+                <li class="nav-item" style="margin-left: 10%">
+                    <a class="nav-link" href="{% url 'blog:topic' 'travel' %}" style="color: white;">DU LỊCH</a>
+                </li>
+                <li class="nav-item" style="margin-left: 10%">
+                    <a class="nav-link" href="{% url 'blog:topic' 'book' %}" style="color: white;">SÁCH</a>
+                </li>
+                <li class="nav-item" style="margin-left: 10%">
+                    <a class="nav-link" href="{% url 'blog:topic' 'others' %}" style="color: white;">LINH TINH</a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline" action="/blog/search" method="GET">
+            <button style="margin-right: 20px; background-color: #0066CC; border: 0;" class="btn btn-success" type="submit"><img style="width: 20px" src="{% static 'lup.png' %}"></button>
+        </form>
+    </nav>
+
+    <div class="row" style="margin: auto; ">
+        <div class="col-xl-2"></div>
+        <div class="col-xl-6" >
+        {% block content %} {% endblock %} 
+        </div>
+        {% block right %}
+        <div class="col-xl-2">
+            
+            <br>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/16d05108d07/da-nang/" data-label_1="THỜI TIẾT" data-label_2="ĐÀ NẴNG" data-theme="pure" >THỜI TIẾT ĐÀ NẴNG</a>
+            <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
+            <br>
+            <p style="color: #0066CC; font-size: 1.5em;">Bài viết mới nhất</p>
+            <div style="background-color: #0066CC; height: 2px; margin-top: -1em;"></div>
+            <br>
+            {% for post in newest %}
+                <div class="row" style="margin: auto">
+                <div class="col-4" style="margin:auto; margin:0; padding: 0">    
+                    <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img style="width: 100%; " src="{{ post.image.url }}" ></a>
+                </div>
+                <div class="col-8" style="margin:auto">    
+                    <a href="{% url 'blog:post' post.topic post.slug %}" style="color:#0066CC; text-align:justify; " target="_blank">  {{ post.title }} </a><br>
+                </div>
+                </div>
+                <br>
+            {% endfor %}
+            
+            <p style="color: #0066CC; font-size: 1.5em;">Bài viết xem nhiều</p>
+            <div style="background-color: #0066CC; height: 2px; margin-top: -1em;"></div>
+            <br>
+            {% for post in most %}
+                <div class="row" style="margin: auto">
+                <div class="col-4" style="margin:auto; margin:0; padding: 0">    
+                    <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img style="width: 100%; " src="{{ post.image.url }}" ></a>
+                </div>
+                <div class="col-8" style="margin:auto">    
+                    <a href="{% url 'blog:post' post.topic post.slug %}" style="color:#0066CC; text-align:justify; " target="_blank">  {{ post.title }} </a><br>
+                </div>
+                </div>
+                <br>
+            {% endfor %}
+            
+        </div>
+        {% endblock %}
+    </div>
+</body>
+<footer>
+    <div style="background-color: #0066CC; margin-top: 30px;">
+        
+        <div style="height: 5px; background-color: rgb(219, 5, 5); max-width: 100%;"></div>
+        <div class="row" style="max-width: 100%;">
+            <div class="col-xl-4"></div>
+            <div class="col-xl-4">
+                <div class="row" style="margin:auto; margin-top: 2%;">
+                    
+                        <img src="{% static 'ava5.png' %}" style="margin:auto; width: 18%;   margin-right: 10px;">
+                    
+                    
+                        <div class="row" style="margin:auto; margin-left: 0; ">
+                            <div style="height: 100px; width: 2px; background-color: white; margin-top: 4%; border-radius: 50px;"></div>
+                            <p style="margin-left: 10px; color: white; margin-top: 2%">Liên hệ:<br>
+                            
+                            <img src="{% static 'phone.png' %}" style="height: 1.5em;"> 0912 995 882<br>
+                            <a href="https://www.facebook.com/long.phan.777" target="_blank"><img src="{% static 'fbicon.png' %}" style="height: 1.5em;"></a> fb.com/long.phan.777<br>
+                            <img src="{% static 'email.png' %}" style="height: 1.5em;"> longphandanang@gmail.com<br>
+                            </p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+        
+        <p style="text-align: center; color: white; font-style: italic; margin-top: 0.5em;">@2020 - Thiết kế và xây dựng bởi Long Phan</p>
+        <div style="line-height: 0.00001px;"><br></div>
+    </div>
+    <div class="clear"></div>
+</footer>
+</html>

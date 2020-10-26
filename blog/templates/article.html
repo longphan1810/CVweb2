@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ article.title }} {% endblock %}
+
+{% block content %}
+<div class="row" style="margin: auto">
+<div class="col-xl-0"></div>
+<div class="col-xl-12" style="margin: auto">
+    <br>
+    <a href="./" style="color: #0066CC;"><h3>{{article.title}}</h3></a>
+    <br>
+    
+    <h6><small><font size=2><i><img style="height: 1em;" src="{% static 'clock.png' %}"> {{ article.date|date:"d-m-Y" }}</i></font></small></h6>
+    <p style="text-align: right; color:#0066CC; margin-top: -2em"> <img style="height: 1em;" src="{% static 'view.png' %}"> {{ article.view }}</p>
+    
+    <br>
+    
+    <img src="{{ article.image.url }}" style="width: 100%; ">
+    
+    <br>
+    <br>
+    <p style="text-align: justify; width: 100%;"> {{article.body|safe}} </p>
+    <p style="margin-top: 5%"><h5><strong><label>Bình luận:</label></strong></h5></p>
+    {% for comment in article.comments.all %}
+        <div class="media border p-3">
+            <div class="media-body">
+                <h4><strong>{{comment.author}}</strong> &nbsp; <small><font size=2.5><i>{{comment.date}}</i></font></small></h4>        
+                <p>{{comment.body|safe|linebreaks}}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% if user.username %}
+        <form action="{% url 'blog:post' article.topic article.title %}" method="POST">
+            {% csrf_token %}
+            <p><strong><label>Viết bình luận:</label></strong></p>
+            {{form.body}}
+            <br/>
+            <input type="submit" value="Bình luận" >
+        </form>
+    {% endif %}
+    <p style="margin-top: 5%"><h5><strong><label>Bài viết liên quan:</label></strong></h5></p>
+    {% for post in articleList %}
+        
+        <a href="{% url 'blog:post' post.topic post.title %}" target="_blank"> <h6 style="color:#0066CC ;"> {{ post.title }} </h6></a>
+    {% endfor %}
+</div>
+</div>
+        
+    
+{% endblock %}

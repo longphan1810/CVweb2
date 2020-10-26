@@ -1,0 +1,799 @@
+#hiddenInfor {
+    display: none;
+}
+.large-header {
+    position: relative;
+    width: 100%;
+    background: #111;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+.demo .large-header {
+    background: rgba(0,0,0,0);
+    }
+.main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #F9F1E9;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+.demo .main-title {
+    text-transform: uppercase;
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+    }
+    .main-title .thin {
+    font-weight: 200;
+    }
+@media only screen and (max-width: 768px) {
+    .demo .main-title {
+        font-size: 3em;
+    }
+}
+
+/* text animation */
+svg.intro {
+    background: rgba(192, 42, 42, 0);
+    max-width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     }
+    svg.intro .text {
+        display: none; }
+    svg.intro.go .text {
+        font-family: Arial, sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        display: block; }
+    svg.intro.go .text-stroke {
+        fill: none;
+        stroke: rgb(161, 159, 159);
+        stroke-width: 2.8px;
+        stroke-dashoffset: -900;
+        stroke-dasharray: 900;
+        stroke-linecap: butt;
+        stroke-linejoin: round;
+        animation: dash 2.5s ease-in-out forwards; }
+    svg.intro.go .text-stroke:nth-child(2) {
+        animation-delay: .2s; }
+    svg.intro.go .text-stroke:nth-child(3) {
+        animation-delay: .9s; }
+    svg.intro.go .text-stroke-2 {
+        stroke: white;
+        animation-delay: 1.2s; }
+    svg.intro.go .text-stroke:nth-child(5) {
+        animation-delay: 1.5s; }
+    svg.intro.go .text-stroke:nth-child(6) {
+        animation-delay: 1.8s; }
+    @keyframes dash {
+    100% {
+        stroke-dashoffset: 0; } }
+
+
+#mount {
+opacity: 1;
+position: relative;
+padding-left: 50%;
+padding-top: 50%;
+width: 500px;
+height: 500px;
+transition: all 2000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#mount.visible {
+opacity: 1;
+}
+
+
+#hinh1 {
+    z-index: 7;
+    margin: auto;
+    width: fit-content;
+}
+#menu li {
+    color: #0066CC;
+}
+
+#menu a {
+    display: block;
+}
+#menu a:link {
+    text-decoration: none; 
+    color: #0066CC;
+}
+#menu a:visited {
+    color: #0066CC;
+    text-decoration: none;
+}
+#menu a:hover {
+    color: #49504b9f; 
+}
+
+.timerole {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 0;
+    width: 5px;
+    height: 1500px;
+    background-color: white;
+}
+
+.start {
+    position: relative;
+    margin-top: -15px;
+    margin-left: -12.5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+}
+.right {
+    position: absolute;
+    margin: auto;
+    height: 25px;
+    width: 100px;
+    margin-left: 100px;
+    margin-top: -15px;
+    border-radius: 50px;
+    background: white;
+    color: #0066CC;
+    text-align: center;
+}
+.left {
+    position: absolute;
+    margin: auto;
+    height: 25px;
+    width: 100px;
+    margin-left: -200px;
+    margin-top: -15px;
+    border-radius: 50px;
+    background: white;
+    color: #0066CC;
+    text-align: center;
+}
+.yback {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ynum {
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    transform: translate(-40%);
+    margin-top: -38px;
+    color: white;
+    
+}
+.yback .yloader {
+    position: relative;
+    margin: auto;
+    margin-top: 60px;
+    margin-left: -22.5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0066CC;
+    animation: runani 2s linear infinite;
+} 
+.yback .yloader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgb(255, 253, 253));
+    background-size: 25px 50px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.yback .yloader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    z-index: 10;
+}
+.yback .yloader span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: #0066CC;
+    border-radius: 50%;
+}
+
+
+
+@keyframes runani {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.draw {
+    position: absolute;
+    background: white;
+    display: none;
+    margin-top: -15px;
+    margin-left: 25px;
+    width: 200px;
+    height: 5px;
+    animation: draw1 2s linear;
+    
+}
+
+@keyframes draw1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 200px;
+    }
+}
+.draw2 {
+    position: absolute;
+    display: none;
+    background: white;
+    width: 5px;
+    height: 50px;
+    margin-top: -10px;
+    margin-left: 220px;
+    
+}
+.draw2khung {
+    position: absolute;
+    display: none;
+    margin-top: 40px;
+    margin-left: 100px;
+    width: 200px;
+    height: 100px;
+    border: 3px solid white;
+    border-bottom: 0;
+}
+.draw3 {
+    position: absolute;
+    display: none;
+    margin-top: 95px;
+    margin-left: 120px;
+    height: 50px;
+    width: calc(240px / 8);
+    background: url('../dihoc3.png');
+    animation: dihoc 1s steps(8) infinite;
+}
+@keyframes dihoc {
+    from {
+        background-position: 240px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+.draw32 {
+    position: absolute;
+    display: none;
+    margin-top: 95px;
+    margin-left: 120px;
+    height: 50px;
+    width: calc(240px / 8);
+    background: url('../sinhvien.png');
+    animation: dihoc 1s steps(8) infinite;
+}
+.draw33 {
+    position: absolute;
+    display: none;
+    margin-top: 95px;
+    margin-left: 120px;
+    height: 50px;
+    width: calc(480px / 8);
+    background: url('../sale.png');
+    animation: sale 1s steps(8) infinite;
+}
+@keyframes sale {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 480px;
+    }
+}
+@keyframes dihoc {
+    from {
+        background-position: 240px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+.draw34 {
+    position: absolute;
+    display: none;
+    margin-top: 50px;
+    margin-left: 140px;
+    height: 90px;
+    width: calc(960px / 8);
+    background: url('../work.png');
+    animation: work 2s steps(8) infinite;
+}
+@keyframes work {
+    from {
+        background-position: 960px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+.draw35 {
+    position: absolute;
+    display: none;
+    margin-top: 50px;
+    margin-left: 140px;
+    height: 90px;
+    width: calc(960px / 8);
+    background: url('../manager3.png');
+    animation: work 2s steps(8) infinite;
+}
+
+.draw5 {
+    position: absolute;
+    display: none;
+    background: #0066CC;
+    animation: run20082 4s linear;
+}
+@keyframes run20082 {
+    0% {
+        width: 250px;
+        height: 250px;
+        margin-top: -10px;
+        margin-left: 80px;
+    }
+    50% {
+        width: 250px;
+        height: 250px;
+        margin-top: -10px;
+        margin-left: 80px;
+    }
+    100% {
+        width: 250px;
+        height: 250px;
+        margin-left: 80px;
+        margin-top: 230px;
+    }
+    
+}
+.drawL {
+    position: absolute;
+    background: white;
+    right: calc(50% + 22.5px);
+    display: none;
+    margin-top: -15px;
+    margin-left: -220px;
+    width: 200px;
+    height: 5px;
+    animation: draw1 2s linear;
+    
+}
+
+@keyframes draw1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 200px;
+    }
+}
+.draw2L {
+    position: absolute;
+    display: none;
+    background: white;
+    width: 5px;
+    height: 50px;
+    margin-top: -10px;
+    margin-left: -220px;
+    
+}
+.draw2L2 {
+    display: none; position: absolute; width: 5px; height: 50px; background: white; margin-left: -220px; margin-top: 200px;
+}
+.draw2khungL {
+    position: absolute;
+    display: none;
+    margin-top: 40px;
+    margin-left: -300px;
+    width: 200px;
+    height: 100px;
+    border: 3px solid white;
+    border-bottom: 0;
+}
+.draw2khungL2 {
+    display: none; position: absolute; margin-top: 250px; margin-left: -300px; width: 200px; height: 100px; border: 3px solid white; border-bottom: 0;
+}
+
+.draw34L {
+    position: absolute;
+    display: none;
+    margin-top: 50px;
+    margin-left: -260px;
+    height: 90px;
+    width: calc(480px / 4);
+    background: url('../manager.png');
+    animation: workL 2s steps(4) infinite;
+}
+@keyframes workL {
+    from {
+        background-position: 480px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+.draw35L {
+    position: absolute;
+    display: none;
+    margin-top: 40px;
+    margin-left: -260px;
+    height: 100px;
+    width: calc(1067px / 8);
+    background: url('../project.png');
+    animation: work5L 2s steps(8) infinite;
+}
+@keyframes work5L {
+    from {
+        background-position: 1067px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+.draw35L2 {
+    position: absolute;
+    display: none;
+    margin-top: 265px;
+    margin-left: -260px;
+    height: 90px;
+    width: calc(720px / 6);
+    background: url('../nuvola.png');
+    animation: work5L2 2s steps(6) infinite;
+}
+@keyframes work5L2 {
+    from {
+        background-position: 720px;
+    }
+    to {
+        background-position: 0px;
+    }
+}
+.draw5L {
+    position: absolute;
+    display: none;
+    background: #0066CC;
+    animation: run20082L 4s linear;
+}
+@keyframes run20082L {
+    0% {
+        width: 250px;
+        height: 250px;
+        margin-top: -10px;
+        margin-left: -330px;
+    }
+    50% {
+        width: 250px;
+        height: 250px;
+        margin-top: -10px;
+        margin-left: -330px;
+    }
+    100% {
+        width: 250px;
+        height: 250px;
+        margin-left: -330px;
+        margin-top: 230px;
+    }
+    
+}
+.draw5L2 {
+    position: absolute;
+    display: none;
+    background: #0066CC;
+    animation: run20082L 4s linear;
+}
+@keyframes run20082L {
+    0% {
+        width: 250px;
+        height: 450px;
+        margin-top: -10px;
+        margin-left: -330px;
+    }
+    50% {
+        width: 250px;
+        height: 450px;
+        margin-top: -10px;
+        margin-left: -330px;
+    }
+    100% {
+        width: 250px;
+        height: 100px;
+        margin-left: -330px;
+        margin-top: 430px;
+    }
+    
+}
+#img1 {
+    display: none; position: absolute; height: 70px; margin-top: 70px; margin-left: 200px;
+}
+#img12 {
+    display: none; position: absolute; height: 70px; margin-top: 70px; margin-left: 200px;
+}
+#img13 {
+    display: none; position: absolute; height: 70px; margin-top: 70px; margin-left: 190px;
+}
+.exptext {
+    display: none; position: absolute; margin-top: 140px; color: white; width: 200px; text-align: justify; margin-left: 100px;
+}
+.exptextL {
+    display: none; position: absolute; margin-top: 140px; color: white; width: 200px; text-align: justify; margin-left: -300px;
+}
+@media only screen and (max-width: 600px) {
+    .skilltext {
+        position: relative;
+        margin: auto;
+        margin-top: -600px;
+        width: 100%;
+    }
+    #logo {
+        width: 15%; position: absolute; margin-left: 47%; transform: translate(-50%); margin-top: -5%;
+    }
+    #menu {
+        font-size: 0.47em; width: 100%; margin: 0; padding: 0;
+    }
+    #menu li {
+        display: inline-block; margin: auto; margin-top:5%;
+    }
+    .right {
+        margin-left: 50px;
+    }
+    .left {
+        margin-left: -150px;
+    }
+    .draw {
+        width: 100px;
+        height: 5px;
+        animation: draw1 2s linear;
+        
+    }
+    @keyframes draw1 {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100px;
+        }
+    }
+    .draw2 {
+        margin-left: 120px;
+        
+    }
+    .draw2khung {
+        margin-left: 15px;
+        width: 160px;
+    }
+    .draw3 {
+        margin-top: 85px;
+        margin-left: 30px;
+    }
+    .draw32 {
+        margin-top: 85px;
+        margin-left: 30px;
+    }
+    .draw33 {
+        margin-top: 85px;
+        margin-left: 20px;
+    }
+    .draw34 {
+        margin-left: 40px;
+    }
+    .draw35 {
+        margin-left: 40px;
+    }
+    .draw5 {
+        position: absolute;
+        display: none;
+        background: #0066CC;
+        animation: run20082 4s linear;
+    }
+    @keyframes run20082 {
+        0% {
+            width: 190px;
+            height: 250px;
+            margin-top: -10px;
+            margin-left: 10px;
+        }
+        50% {
+            width: 190px;
+            height: 250px;
+            margin-top: -10px;
+            margin-left: 10px;
+        }
+        100% {
+            width: 190px;
+            height: 250px;
+            margin-left: 10px;
+            margin-top: 230px;
+        }
+        
+    }
+    .drawL {
+        margin-left: -120px;
+        width: 100px;
+    }
+    .draw2L {
+        margin-left: -120px;
+    }
+    .draw2L2 {
+        height: 30px;
+        margin-top: 220px;
+        margin-left: -120px;
+    }
+    .draw2khungL {
+        margin-left: -170px;
+        width: 160px;
+    }
+    .draw2khungL2 {
+        margin-left: -170px;
+        width: 160px;
+    }
+    .draw34L {
+        margin-left: -150px;
+    }
+    .draw35L {
+        margin-left: -150px;
+    }
+    .draw35L2 {
+        margin-left: -150px;
+    }
+    .draw5L {
+        position: absolute;
+        display: none;
+        background: #0066CC;
+        animation: run20082L 4s linear;
+    }
+    @keyframes run20082L {
+        0% {
+            width: 190px;
+            height: 250px;
+            margin-top: -10px;
+            margin-left: -230px;
+        }
+        50% {
+            width: 190px;
+            height: 250px;
+            margin-top: -10px;
+            margin-left: -230px;
+        }
+        100% {
+            width: 190px;
+            height: 250px;
+            margin-left: -230px;
+            margin-top: 230px;
+        }
+        
+    }
+    .draw5L2 {
+        position: absolute;
+        display: none;
+        background: #0066CC;
+        animation: run20082L 4s linear;
+    }
+    @keyframes run20082L {
+        0% {
+            width: 190px;
+            height: 450px;
+            margin-top: -10px;
+            margin-left: -200px;
+        }
+        50% {
+            width: 190px;
+            height: 450px;
+            margin-top: -10px;
+            margin-left: -200px;
+        }
+        100% {
+            width: 190px;
+            height: 100px;
+            margin-left: -200px;
+            margin-top: 430px;
+        }
+        
+    }
+    #img1 {
+        display: none; position: absolute; height: 60px; margin-top: 70px; margin-left: 90px;
+    }
+    #img12 {
+        display: none; position: absolute; height: 60px; margin-top: 70px; margin-left: 90px;
+    }
+    #img13 {
+        display: none; position: absolute; height: 60px; margin-top: 70px; margin-left: 85px;
+    }
+    .exptext {
+        display: none; position: absolute; margin-top: 140px; color: white; width: 160px; text-align: justify; margin-left: 15px;
+    }
+    .exptextL {
+        display: none; position: absolute; margin-top: 140px; color: white; width: 160px; text-align: justify; margin-left: -170px;
+    }
+}
+@media only screen and (min-width: 600px) {  
+    .skilltext {
+        position: relative;
+        margin: auto;
+        
+        width: 70%;
+        margin-top: -120%;
+        min-height: 100%;
+    }
+    #logo {
+        width: 10%; position: absolute; margin-left: 50%; transform: translate(-50%); margin-top: -3%;
+    }
+    #menu {
+        font-size: 0.7em; width: 100%; margin: 0; padding: 0;
+    }
+    #menu li {
+        display: inline-block; margin: auto; margin-top:5%; margin-left: 5%;
+    }
+}
+@media only screen and (min-width: 990px) {  
+    .skilltext {
+        position: relative;
+        margin: auto;
+        
+        width: 70%;
+        margin-top: -120%;
+        min-height: 100%;
+    }
+    
+    #menu {
+        padding-left: 20%; width: 100%; font-size: 1em;
+    }
+    #logo {
+        width: 8%; padding-top: 2%; position: absolute; margin-left: 13%;
+    }
+    #menu li {
+        display: inline-block;
+        
+    }
+}
+@media only screen and (min-width: 1030px) {  
+    .skilltext {
+        position: relative;
+        margin: auto;
+        
+        width: 70%;
+        max-width: 70%;
+        margin-top: -60%;
+        min-height: 100%;
+    }
+
+}

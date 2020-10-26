@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Đăng ký tài khoản {% endblock %}
+
+{% block content %}
+
+<div style="margin:auto; margin-top: 5%; color: #0066CC">
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Đăng ký" style="margin:auto; color: white; background-color: #0066CC; border: 0; border-radius: 50px; padding: 3px 10px"/>
+    </form>
+</div>
+
+{% endblock %}
