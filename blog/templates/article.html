@@ -4,7 +4,7 @@
 {% block title %} {{ article.title }} {% endblock %}
 
 {% block content %}
-<div class="row" style="margin: auto">
+<div class="row" style="margin: auto; ">
 <div class="col-xl-0"></div>
 <div class="col-xl-12" style="margin: auto">
     <br>
@@ -31,10 +31,10 @@
         </div>
     {% endfor %}
     {% if user.username %}
-        <form action="{% url 'blog:post' article.topic article.title %}" method="POST">
+        <form action="{% url 'blog:post' article.topic article.slug %}" method="POST" >
             {% csrf_token %}
             <p><strong><label>Viết bình luận:</label></strong></p>
-            {{form.body}}
+            <div style="max-width: 70%">{{form.body}}</div>
             <br/>
             <input type="submit" value="Bình luận" >
         </form>

@@ -25,7 +25,7 @@ SECRET_KEY = '%htfbg26e3yy58g#s_8ld7is3u^9pq7bl7v&a=kermasl*nu3m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blog-mysql-309202.df.r.appspot.com','127.0.0.1']
 
 
 # Application definition
@@ -83,16 +83,35 @@ WSGI_APPLICATION = 'CVweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cvweb',
-        'USER' : 'myroot',
-        'PASSWORD' : 'Abcd1234',
-        'HOST' : 'localhost',
-        'PORT' : '3306'
+if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/blog-mysql-309202:asia-east1:blogdb',
+            'USER': 'root',
+            'PASSWORD': '0914172246',
+            'NAME': 'cvweb',
+        }
     }
-}
+else:
+    # Running locally so connect to either a local MySQL instance or connect to
+    # Cloud SQL via the proxy. To start the proxy via command line:
+    #
+    #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    #
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'cvweb',
+            'USER': 'myroot',
+            'PASSWORD': '0914172246Long',
+        }
+    }
 
 
 # Password validation

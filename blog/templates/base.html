@@ -31,7 +31,9 @@
         a:hover {
             text-decoration: none;
         }
-        
+        .lentop {display: none; bottom: 40%; right: 10px; cursor: pointer;  position: fixed; z-index: 1000;}
+        .lentop div {background:#0066CC; border:2px solid #fff; border-radius:50%; padding:11px 12.5px; box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.3)}
+        .lentop img {width:20px; height:20px;}
     </style>
     
         {% block css %} {% endblock %}
@@ -39,6 +41,48 @@
     
 </head>
 <body style="background-color: rgb(238, 236, 236);">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v10.0'
+        });
+      };
+
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="103771928477524"
+      theme_color="#67b868"
+      logged_in_greeting="Hi! How can I help you?"
+      logged_out_greeting="Hi! How can I help you?">
+    </div>
+    <div class='lentop'>
+        <div>
+        <img src="{% static 'len.png' %}"/>
+        </div>
+    </div>
+    <script text="text/javascript">
+        $(function(){
+        $(window).scroll(function () {
+        if ($(this).scrollTop() > 1000) $(".lentop").fadeIn();
+        else $(".lentop").fadeOut();
+        });
+        $(".lentop").click(function () {
+        $("body,html").animate({scrollTop: 0}, "slow");
+        });
+        });
+    </script>
    <div id="slide" class="carousel slide" data-ride="carousel">
        <!-- Indicators -->
        <ul class="carousel-indicators">

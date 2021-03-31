@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
 {% block title %} Long Phan - Myblog {% endblock %}
+{% block meta %}
+    <meta property="og:url" content="http://longphanspace.pythonanywhere.com/blog" />
+    <meta property="og:image" content="http://longphanspace.pythonanywhere.com/static/longphan.jpg" />
+    <meta property="og:title" content="Long Phan - My Blog" />
+    <meta property="og:description" content="Blog chia sẻ cá nhân" />
+{% endblock %}
 {% block css %}
 <style>
 @media screen and (max-width: 576px) {
     div.menubar {
         width: 40%;
     }
+    #anh1 {
+        padding: 0px;
+        padding-right: 0;
+    }
 }
-
+@media screen and (min-width: 577px) {
+    #anh1 {
+        padding: 0px;
+        padding-right: 5px;
+    }
+}
 </style>
 {% endblock %}
 
@@ -16,71 +31,71 @@
     <div class="row" style="padding: 10px;">
         {% for post in new4 %}
             {% if forloop.first %}
-            <div class="row col-md-6" style="margin: 0; margin-top: 5px; padding: 0px; padding-right: 5px; ">
-                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width: 100%; height: 400px;"></a>
+            <div id="anh1" class="row col-md-6" style="margin: 0; margin-top: 5px;  ">
+                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width: 100%; height: 400px;object-fit: cover"></a>
                 <p style="margin-top: -3em; background-color: rgba(0, 0, 0, 0.247); text-align: justify; margin-bottom: 0; min-width: 100%; min-height: 3em;">
                     <a href="{% url 'blog:topic' post.topic %}" target="_blank" style="font-size: 0.7em; background-color: #0066cc; color: white; padding: 2px 5px; border-radius: 5px; width: fit-content;"> {{post.topic.showname}}</a>
                     <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank" style=" color: white; font-weight: bold; padding: 0 5px;">{{post.title}}</a>
                 </p>
             </div>
             {% elif forloop.counter == 2 %}
-            
+
             <div class="row col-md-6" style="margin: 0; margin-top: 5px; padding: 0px; ">
-                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 200px;"></a>
+                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 200px;object-fit: cover"></a>
                 <p style="margin-top: -3em; background-color: rgba(0, 0, 0, 0.247); margin-bottom: 0; text-align: justify; min-width: 100%; min-height: 3em;">
                 <a href="{% url 'blog:topic' post.topic %}" target="_blank" style="font-size: 0.7em; background-color: #0066cc; color: white; padding: 2px 5px; border-radius: 5px; width: fit-content;"> {{post.topic.showname}}</a>
                 <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank" style=" color: white; font-weight: bold; padding: 0 5px;">{{post.title}}</a>
                 </p>
             {% elif forloop.counter == 3 %}
-            
+
             <div class="col-6 row" style="margin: 0; padding: 0px; padding-right: 5px; padding-top: 5px; ">
-                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 195px;"></a>
-                <p style="margin-top: -4.5em; background-color: rgba(0, 0, 0, 0.247); text-align: justify; min-width: 100%; min-height: 3em;">
+                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 195px;object-fit: cover"></a>
+                <p style="bottom: 0; margin-top: -4.5em; background-color: rgba(0, 0, 0, 0.247); text-align: justify; min-width: 100%; min-height: 3em;">
                     <a href="{% url 'blog:topic' post.topic %}" target="_blank" style="font-size: 0.7em; background-color: #0066cc; color: white; padding: 2px 5px; border-radius: 5px; width: fit-content;"> {{post.topic.showname}}</a>
                     <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank" style=" color: white; font-weight: bold; padding: 0 5px;">{{post.title}}</a>
                 </p>
             </div>
             {% elif forloop.counter == 4 %}
             <div class="col-6 row" style="margin: 0; padding: 0px; padding-top: 5px; ">
-                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 195px;"></a>
+                <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img src="{{ post.image.url }}" style="width:100%; height: 195px;object-fit: cover"></a>
                 <p style="margin-top: -4.5em; background-color: rgba(0, 0, 0, 0.247); text-align: justify; min-width: 100%; min-height: 3em;">
                     <a href="{% url 'blog:topic' post.topic %}" target="_blank" style="font-size: 0.7em; background-color: #0066cc; color: white; padding: 2px 5px; border-radius: 5px; width: fit-content;"> {{post.topic.showname}}</a>
                     <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank" style=" color: white; font-weight: bold; padding: 0 5px;">{{post.title}}</a>
                     </p>
             </div>
             </div>
-            
+
             {% endif %}
         {% endfor %}
     </div>
     <div class="row" >
         <div class="col-md-6" style="margin-top: 5%">
             <div class="menubar col-md-6" style="background-color:#0066CC; text-align: center; height: 2em; width: 35%; border-top-right-radius: 100px ;">
-                
+
                 <a href="{% url 'blog:topic' 'book' %}" style="color:white; vertical-align: middle;"> SÁCH</a>
             </div>
             <div style="background-color:#0066CC; height: 2px; margin-top: -2px"></div>
             <div class="row" style="margin-top: 20px; ">
-                {% for book in Book %}    
+                {% for book in Book %}
                     {% if forloop.first %}
-                    <div class="col-md-6" >    
-                            <a href="{% url 'blog:post' book.topic book.slug %}" target="_blank"><img src="{{ book.image.url }}" style="max-width: 100%;"></a>
+                    <div class="col-md-6" >
+                            <a href="{% url 'blog:post' book.topic book.slug %}" target="_blank"><img src="{{ book.image.url }}" style="width: 100%; height: 150px; object-fit: cover"></a>
                             <a href="{% url 'blog:post' book.topic book.slug %}" target="_blank"> <h5 style="color:#0066CC; text-align:justify"> {{ book.title }} </h5></a>
                             <p style="text-align:justify;">{{ book.opening|truncatewords:40 }}</p>
-                    </div>    
+                    </div>
                     <div class="col-md-6">
                         {% else %}
                                 <div class="row">
-                                <div class="col-4" style="margin:auto; margin:0; padding: 0">    
-                                    <a href="{% url 'blog:post' book.topic book.slug %}" target="_blank"><img style="width: 100%; " src="{{ book.image.url }}" ></a>
+                                <div class="col-4" style="margin:auto; margin:0; padding: 0">
+                                    <a href="{% url 'blog:post' book.topic book.slug %}" target="_blank"><img style="width: 100%; height: 70px; object-fit: cover" src="{{ book.image.url }}" ></a>
                                 </div>
-                                <div class="col-8" style="margin:auto">    
+                                <div class="col-8" style="margin:auto">
                                     <a href="{% url 'blog:post' book.topic book.slug %}" style="color:#0066CC; text-align:justify; " target="_blank">  {{ book.title }} </a><br>
                                 </div>
                                 </div>
                                 <br>
                         {% endif %}
-                    
+
                     {% endfor %}
                     </div>
             </div>
@@ -91,26 +106,26 @@
             </div>
             <div style="background-color:#0066CC; height: 2px; margin-top: -2px"></div>
             <div class="row" style="margin-top: 20px">
-                {% for code in Code %}    
+                {% for code in Code %}
                     {% if forloop.first %}
-                    <div class="col-md-6">    
-                            <a href="{% url 'blog:post' code.topic code.slug %}" target="_blank"><img src="{{ code.image.url }}" style="max-width: 100%;"></a>
+                    <div class="col-md-6">
+                            <a href="{% url 'blog:post' code.topic code.slug %}" target="_blank"><img src="{{ code.image.url }}" style="width: 100%;height: 150px; object-fit: cover"></a>
                             <a href="{% url 'blog:post' code.topic code.slug %}" target="_blank"> <h5 style="color:#0066CC; text-align:justify"> {{ code.title }} </h5></a>
                             <p style="text-align:justify;">{{ code.opening|truncatewords:40 }}</p>
-                    </div>    
+                    </div>
                     <div class="col-md-6">
                             {% else %}
                                     <div class="row">
-                                    <div class="col-4" style="margin:auto; margin:0; padding: 0">    
-                                        <a href="{% url 'blog:post' code.topic code.slug %}" target="_blank"><img style="width: 100%; " src="{{ code.image.url }}"></a>
+                                    <div class="col-4" style="margin:auto; margin:0; padding: 0">
+                                        <a href="{% url 'blog:post' code.topic code.slug %}" target="_blank"><img style="width: 100%;height: 70px; object-fit: cover " src="{{ code.image.url }}"></a>
                                     </div>
-                                    <div class="col-8" style="margin:auto">    
+                                    <div class="col-8" style="margin:auto">
                                         <a href="{% url 'blog:post' code.topic code.slug %}" style="color:#0066CC; text-align:justify" target="_blank">  {{ code.title }} </a><br>
                                     </div>
                                     </div>
                                     <br>
                             {% endif %}
-                        
+
                         {% endfor %}
                     </div>
             </div>
@@ -122,28 +137,28 @@
                 <a href="{% url 'blog:topic' 'travel' %}" style="color:white; vertical-align: middle;"> DU LỊCH</a>
             </div>
             <div style="background-color:#0066CC; height: 2px; margin-top: -2px"></div>
-            
+
             <div class="row" style="margin-top: 20px">
-                {% for travel in Travel %}    
+                {% for travel in Travel %}
                     {% if forloop.first %}
-                    <div class="col-md-6">    
-                            <a href="{% url 'blog:post' travel.topic travel.slug %}" target="_blank"><img src="{{ travel.image.url }}" style="max-width: 100%;"></a>
+                    <div class="col-md-6">
+                            <a href="{% url 'blog:post' travel.topic travel.slug %}" target="_blank"><img src="{{ travel.image.url }}" style="width: 100%;height: 150px; object-fit: cover"></a>
                             <a href="{% url 'blog:post' travel.topic travel.slug %}" target="_blank"> <h5 style="color:#0066CC; text-align:justify"> {{ travel.title }} </h5></a>
                             <p style="text-align:justify;">{{ travel.opening|truncatewords:40 }}</p>
                     </div>
                     <div class="col-md-6">
                         {% else %}
                                 <div class="row" >
-                                <div class="col-4" style="margin:auto; margin:0; padding: 0">    
-                                    <a href="{% url 'blog:post' travel.topic travel.slug %}" target="_blank"><img style="width: 100%; " src="{{ travel.image.url }}"></a>
+                                <div class="col-4" style="margin:auto; margin:0; padding: 0">
+                                    <a href="{% url 'blog:post' travel.topic travel.slug %}" target="_blank"><img style="width: 100%; height: 70px; object-fit: cover" src="{{ travel.image.url }}"></a>
                                 </div>
-                                <div class="col-8" style="margin:auto">    
+                                <div class="col-8" style="margin:auto">
                                     <a href="{% url 'blog:post' travel.topic travel.slug %}" style="color:#0066CC; text-align:justify" target="_blank">  {{ travel.title }} </a><br>
                                 </div>
                                 </div>
                                 <br>
                         {% endif %}
-                    
+
                         {% endfor %}
                     </div>
             </div>
@@ -154,30 +169,30 @@
             </div>
             <div style="background-color:#0066CC; height: 2px; margin-top: -2px"></div>
             <div class="row" style="margin-top: 20px">
-                {% for other in Others %}    
+                {% for other in Others %}
                     {% if forloop.first %}
-                    <div class="col-md-6">    
-                            <a href="{% url 'blog:post' other.topic other.slug %}" target="_blank"><img src="{{ other.image.url }}" style="max-width: 100%;"></a>
+                    <div class="col-md-6">
+                            <a href="{% url 'blog:post' other.topic other.slug %}" target="_blank"><img src="{{ other.image.url }}" style="width: 100%;height: 150px; object-fit: cover"></a>
                             <a href="{% url 'blog:post' other.topic other.slug %}" target="_blank"> <h5 style="color:#0066CC; text-align:justify"> {{ other.title }} </h5></a>
                             <p style="text-align:justify;">{{ other.opening|truncatewords:40 }}</p>
-                        </div>    
+                        </div>
                         <div class="col-md-6">
                             {% else %}
                                     <div class="row" >
-                                    <div class="col-4" style="margin:auto; margin:0; padding: 0">    
-                                        <a href="{% url 'blog:post' other.topic other.slug %}" target="_blank"><img style="width: 100%; " src="{{ other.image.url }}"></a>
+                                    <div class="col-4" style="margin:auto; margin:0; padding: 0">
+                                        <a href="{% url 'blog:post' other.topic other.slug %}" target="_blank"><img style="width: 100%; height: 70px; object-fit: cover" src="{{ other.image.url }}"></a>
                                     </div>
-                                    <div class="col-8" style="margin:auto">    
+                                    <div class="col-8" style="margin:auto">
                                         <a href="{% url 'blog:post' other.topic other.slug %}" style="color:#0066CC; text-align:justify" target="_blank">  {{ other.title }} </a><br>
                                     </div>
                                     </div>
                                     <br>
                             {% endif %}
-                        
+
                         {% endfor %}
                         </div>
             </div>
         </div>
     </div>
-    
+
 {% endblock %}
