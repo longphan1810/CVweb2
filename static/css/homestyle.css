@@ -777,6 +777,12 @@ opacity: 1;
         font-size: 2em;
         margin-left: -10%;
     }
+    .text-info {
+        font-weight: bold; font-size: 1.5em;
+    }
+    .text-info-0 {
+        font-size: 0.7em;
+    }
 }
 @media only screen and (min-width: 600px) {  
     .skilltext {
@@ -837,7 +843,12 @@ opacity: 1;
     #program {
         margin-top: 10%;
     }
-    
+    .text-info {
+        font-weight: bold; font-size: 2em; 
+    }
+    .text-info-0 {
+        line-height: 2rem;
+    }
 }
 @media only screen and (min-width: 1030px) {  
     .skilltext {
@@ -856,7 +867,7 @@ opacity: 1;
 
 
 
-svg {
+.svg-2 {
     display: block;
     font: 0.5em 'Montserrat';
     margin-top: -25%;
@@ -867,7 +878,7 @@ svg {
     fill: none;
     stroke: white;
     stroke-dasharray: 6% 29%;
-    stroke-width: 1px;
+    stroke-width: 0.7px;
     stroke-dashoffset: 0%;
     animation: stroke-offset 5.5s infinite linear;
 }
@@ -900,3 +911,49 @@ svg {
 @keyframes stroke-offset{
   100% {stroke-dashoffset: -35%;}
 }
+
+#design {
+    margin-top: 15%;
+    animation: showup linear 1s
+}
+#program {
+    margin-top: 15%;
+    animation: showup linear 0.5s;
+}
+
+@keyframes showup {
+    0% {
+        margin-top: 30%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+.program-product {
+    background-color:white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.blog-info {
+    display: none; position: absolute; margin-top: -80%; width: 60%; height: 30%; background:black; margin-left: 50%; transform: translate(-50%);
+    animation: showin 0.5s linear; opacity: 0.6;
+    
+}
+
+@keyframes showin {
+    0% {
+        width: 80%;
+        height: 40%;
+        margin-top: -85%;
+        opacity: 0.2;
+    }
+    100% {
+        width: 60%;
+        height: 30%;
+        opacity: 0.6;
+        margin-top: -80%;
+    }
+}
+

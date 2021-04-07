@@ -304,13 +304,13 @@
                                         
                                             <text text-anchor="start" x="10" y="60" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"	&#9679; Python, JavaScript"</text>
                                             <text text-anchor="start" x="10" y="90" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"&#9679; HTML, CSS"</text>
-                                            <text text-anchor="start" x="10" y="120" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"&#9679; Django, ReactJS"</text>
-                                            <text text-anchor="start" x="10" y="150" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"&#9679; Fullstack"</text>
+                                            <text text-anchor="start" x="10" y="120" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"&#9679; Django, ReactJS, NodeJS"</text>
+                                            <text text-anchor="start" x="10" y="150" class="text text-stroke" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">"&#9679; MySQL, MongoDB"</text>
                                             <text text-anchor="start" x="10" y="30" class="text text-stroke text-stroke-2" clip-path="url(#text1)">LẬP TRÌNH</text>
                                             <text text-anchor="start" x="10" y="60" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; Python, JavaScript</text>
                                             <text text-anchor="start" x="10" y="90" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; HTML, CSS</text>
-                                            <text text-anchor="start" x="10" y="120" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; Django, ReactJS</text>
-                                            <text text-anchor="start" x="10" y="150" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; Fullstack</text>
+                                            <text text-anchor="start" x="10" y="120" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; Django, ReactJS, NodeJS</text>
+                                            <text text-anchor="start" x="10" y="150" class="text text-stroke text-stroke-2" style="text-transform: none; font-size: 1em" clip-path="url(#text2)">&#9679; MySQL, MongoDB</text>
                                             <defs>
                                             <clipPath id="text1">
                                                 <text text-anchor="start" x="10" y="30" class="text">LẬP TRÌNH</text>
@@ -318,8 +318,8 @@
                                             <clipPath id="text2">
                                                 <text text-anchor="start" x="10" y="60" class="text" style="text-transform: none; font-size: 1em">&#9679; Python, JavaScript</text>
                                                 <text text-anchor="start" x="10" y="90" class="text" style="text-transform: none; font-size: 1em">&#9679; HTML, CSS</text>
-                                                <text text-anchor="start" x="10" y="120" class="text" style="text-transform: none; font-size: 1em">&#9679; Django, ReactJS</text>
-                                                <text text-anchor="start" x="10" y="150" class="text" style="text-transform: none; font-size: 1em">&#9679; Fullstack</text>
+                                                <text text-anchor="start" x="10" y="120" class="text" style="text-transform: none; font-size: 1em">&#9679; Django, ReactJS, NodeJS</text>
+                                                <text text-anchor="start" x="10" y="150" class="text" style="text-transform: none; font-size: 1em">&#9679; MySQL, MongoDB</text>
                                             </clipPath>
                                             
                                             </defs>
@@ -734,14 +734,14 @@
                             
                         </div>
                         <div style="margin:auto; position: relative; height: 50px; width: 50px; border-radius: 50%; background: white; margin-top: -5px; margin-bottom: 0px; "></div>
-                        <div style="margin:auto; color: #0066CC; font-weight: bold; position: relative; margin-top: -38px; text-align: center; margin-bottom: 200px;">2020</div>
+                        <div style="margin:auto; color: #0066CC; font-weight: bold; position: relative; margin-top: -38px; text-align: center; margin-bottom: 200px;">2021</div>
                     </div>
                     <div class="tab-pane container-fluid fade" id="product" style="position: relative; ">
-                        <br>
-                        <div class="row" id="program" style="height: 1000px;">
+                        
+                        <div class="row" id="program">
                             <span class="s5" style="background-color: rgba(255, 0, 0, 0)" ></span>
                             <span class="s2-2">
-                                <svg viewBox="0 0 300 100">
+                                <svg class="svg-2" viewBox="0 0 300 100">
                                     <symbol id="s-text">
                                       <text text-anchor="middle" x="50%" y="80%">P R O G R A M M I N G</text>
                                     </symbol>
@@ -757,10 +757,52 @@
                             </span>
                             <span class="s5"style="background-color: rgba(255, 0, 0, 0)"></span>
                         </div>
-                        <div class="row" id="design">
+                        <div id="grogram-product" class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5 program-product" style="overflow: hidden;" onmouseover="show_info(this)" onmouseout="hide_info(this)">
+                                <img class="deep-product" src="{% static 'blog_product.png' %}" style="max-width: 100%;" />
+                                <div class="blog-info" >
+                                    <p class="text-info-0" style="text-align: center; margin: auto; color: white">
+                                        <span class="text-info"> BLOG WEBSITE </span><br><br>
+                                        Languages: Python, html, CSS, JavaScript <br>
+                                        Framework: Django, Bootstrap <br>
+                                        Library: Jquery <br>
+                                        Database: MySQL <br>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                            <script text="text/javascript">
+                                function show_info(a) {
+                                    $(a).children("img").css({'transition': '1s ease-in-out',    'transform': 'scale(1.5)',    'opacity': '0.5'})
+                                    $(a).children("div").css('display','flex');
+                                }
+                                function hide_info(a) {
+                                    
+                                    $(a).children("div").css('display','none');
+                                    $(a).children("img").css({'transition': '0.5s ease-in-out',    'transform': 'scale(1)',    'opacity': '1'})
+                                }
+                            </script>
+                            <div class="col-md-5 program-product" style="overflow: hidden;" onmouseover="show_info(this)" onmouseout="hide_info(this)">
+                                <img class="deep-product" src="{% static 'chat-app.png' %}" style="max-width: 100%;" />
+                                <div class="blog-info" >
+                                    <p class="text-info-0" style="text-align: center; margin: auto; color: white">
+                                        <span class="text-info"> CHAT APP </span><br><br>
+                                        Languages: JavaScript, html, CSS <br>
+                                        Library: React<br>
+                                        Environment: NodeJS <br>
+                                        Database: MongoDB <br>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div class="row" id="design" style="display: none;">
                             <span class="s5" ></span>
                             <span class="s2">
-                                <svg viewBox="0 0 150 75">
+                                <svg class="svg-2" viewBox="0 0 150 75">
                                     <symbol id="s-text2">
                                       <text text-anchor="middle" x="50%" y="80%">D E S I G N</text>
                                     </symbol>
@@ -1015,12 +1057,12 @@
                         <script text="text/javascript">
                             $(function() {
                                 $(window).scroll(function () {
-                                    if ($(this).scrollTop() > 200) $("#design-product").fadeIn(1000);
-                                    else $("#design-product").fadeOut(1000);
+                                    if ($(this).scrollTop() > 50) $("#design-product").fadeIn(1000);
+                                    else $("#design-product").fadeOut();
                                 });
                                 $(window).scroll(function () {
-                                    if ($(this).scrollTop() > 180) $("#design").fadeIn(1000);
-                                    else $("#design").fadeOut(1000);
+                                    if ($(this).scrollTop() > 50) $("#design").fadeIn(1000);
+                                    else $("#design").fadeOut();
                                 });
                             })
                         </script>
