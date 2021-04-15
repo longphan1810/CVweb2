@@ -32,10 +32,25 @@
     .main-title .thin {
     font-weight: 200;
     }
+
+.s5 {
+    width: 40%;
+    background-color: white;
+    height: 5px;
+}
+.s2 {
+    width: 20%;
+    color: white; font-weight:bold; text-align: center; font-size: 3em; position: relative; margin-top: -0.75em;
+}
+.s2-2 {
+    width: 20%;
+    color: white; font-weight:bold; text-align: center; font-size: 3em; position: relative; margin-top: -0.75em;
+}
 @media only screen and (max-width: 768px) {
     .demo .main-title {
         font-size: 3em;
     }
+    
 }
 
 /* text animation */
@@ -745,6 +760,30 @@ opacity: 1;
         display: none; position: absolute; margin-top: 140px; color: white; width: 160px; text-align: justify; margin-left: -170px;
     }
 }
+@media only screen and (max-width: 990px) {
+    .s5 {
+        width: 20%;
+        height: 2px;
+    }
+    .s2 {
+        width: 60%;
+        font-size: 2em;
+    }
+    #program {
+        margin-top: 20%;
+    }
+    .s2-2 {
+        width: 80%;
+        font-size: 2em;
+        margin-left: -10%;
+    }
+    .text-info {
+        font-weight: bold; font-size: 1.5em;
+    }
+    .text-info-0 {
+        font-size: 0.7em;
+    }
+}
 @media only screen and (min-width: 600px) {  
     .skilltext {
         position: relative;
@@ -763,6 +802,7 @@ opacity: 1;
     #menu li {
         display: inline-block; margin: auto; margin-top:5%; margin-left: 5%;
     }
+    
 }
 @media only screen and (min-width: 990px) {  
     .skilltext {
@@ -784,6 +824,31 @@ opacity: 1;
         display: inline-block;
         
     }
+    .s5 {
+        width: 40%;
+        background-color: white;
+        height: 5px;
+    }
+    .s2 {
+        width: 20%;
+        
+        
+    }
+    .s2-2 {
+        width: 30%;
+        margin-left: -5%;
+        
+        
+    }
+    #program {
+        margin-top: 10%;
+    }
+    .text-info {
+        font-weight: bold; font-size: 2em; 
+    }
+    .text-info-0 {
+        line-height: 2rem;
+    }
 }
 @media only screen and (min-width: 1030px) {  
     .skilltext {
@@ -797,3 +862,98 @@ opacity: 1;
     }
 
 }
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+
+.svg-2 {
+    display: block;
+    font: 0.5em 'Montserrat';
+    margin-top: -25%;
+    
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 0.7px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: white;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: white;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: white;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: white;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: white;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+}
+
+#design {
+    margin-top: 15%;
+    animation: showup linear 1s
+}
+#program {
+    margin-top: 15%;
+    animation: showup linear 0.5s;
+}
+
+@keyframes showup {
+    0% {
+        margin-top: 30%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+.program-product {
+    background-color:white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.blog-info {
+    display: none; position: absolute; margin-top: -80%; width: 60%; height: 30%; background:black; margin-left: 50%; transform: translate(-50%);
+    animation: showin 0.5s linear; opacity: 0.6;
+    
+}
+
+@keyframes showin {
+    0% {
+        width: 80%;
+        height: 40%;
+        margin-top: -85%;
+        opacity: 0.2;
+    }
+    100% {
+        width: 60%;
+        height: 30%;
+        opacity: 0.6;
+        margin-top: -80%;
+    }
+}
+
