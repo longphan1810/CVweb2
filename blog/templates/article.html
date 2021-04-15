@@ -2,7 +2,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %} {{ article.title }} {% endblock %}
-
+{% block meta %}
+    <meta property="og:image" content="{{ article.image.url }}">
+    <meta property="og:title" content="{{ article.title }}">
+    <meta property="og:description" content="{{ article.opening }}">
+{% endblock %}
 {% block content %}
 <div class="row" style="margin: auto; ">
 <div class="col-xl-0"></div>
