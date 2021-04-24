@@ -3,6 +3,7 @@
 }
 #skill-container {
     position: relative;
+    margin: auto;
     margin-top: 20%;
 }
 .large-header {
