@@ -767,8 +767,8 @@ opacity: 1;
     #skill-container {
         z-index: 2;
         position: relative;
-        
-        margin-top: 100%;
+        margin:auto;
+        margin-top: 20%;
     }
     .s5 {
         position: relative;
