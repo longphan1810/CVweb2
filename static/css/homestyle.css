@@ -1,12 +1,7 @@
 #hiddenInfor {
     display: none;
 }
-#skill-container {
-    z-index: 2;
-    position: relative;
-    margin: auto;
-    margin-top: 20%;
-}
+
 .large-header {
     position: relative;
     width: 100%;
@@ -51,6 +46,12 @@
 .s2-2 {
     width: 20%;
     color: white; font-weight:bold; text-align: center; font-size: 3em; position: relative; margin-top: -0.75em;
+}
+#skill-container {
+    z-index: 2;
+    position: relative;
+    margin: auto;
+    margin-top: 20%;
 }
 @media only screen and (max-width: 768px) {
     .demo .main-title {
@@ -769,6 +770,8 @@ opacity: 1;
 @media only screen and (max-width: 990px) {
 
     #skill-container {
+        z-index: 2;
+        position: relative;
         margin: auto;
         margin-top: 20%;
     }
@@ -819,7 +822,9 @@ opacity: 1;
 }
 @media only screen and (min-width: 990px) {  
     #skill-container {
-        margin:auto;
+        z-index: 2;
+        position: relative;
+        margin: auto;
         margin-top: 10%;
     }
     .skilltext {
