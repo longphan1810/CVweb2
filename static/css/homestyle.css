@@ -47,22 +47,12 @@
     width: 20%;
     color: white; font-weight:bold; text-align: center; font-size: 3em; position: relative; margin-top: -0.75em;
 }
-#skill-container {
-    z-index: 2;
-    position: relative;
-    
-    margin-top: 30%;
-}
+
 @media only screen and (max-width: 768px) {
     .demo .main-title {
         font-size: 3em;
     }
-    #skill-container {
-        z-index: 2;
-        position: relative;
-        
-        margin-top: 30%;
-    }
+    
 }
 
 /* text animation */
@@ -778,7 +768,7 @@ opacity: 1;
         z-index: 2;
         position: relative;
         
-        margin-top: 30%;
+        margin-top: 20%;
     }
     .s5 {
         position: relative;
@@ -823,12 +813,7 @@ opacity: 1;
     #menu li {
         display: inline-block; margin: auto; margin-top:5%; margin-left: 5%;
     }
-    #skill-container {
-        z-index: 2;
-        position: relative;
-        
-        margin-top: 30%;
-    }
+    
     
 }
 @media only screen and (min-width: 990px) {  
