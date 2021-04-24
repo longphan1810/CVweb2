@@ -1,6 +1,9 @@
 #hiddenInfor {
     display: none;
 }
+#skill-container {
+    margin-top: 10%;
+}
 .large-header {
     position: relative;
     width: 100%;
@@ -761,6 +764,10 @@ opacity: 1;
     }
 }
 @media only screen and (max-width: 990px) {
+
+    #skill-container {
+        margin-top: 20%;
+    }
     .s5 {
         position: relative;
         top: 3.5vh;
@@ -807,6 +814,9 @@ opacity: 1;
     
 }
 @media only screen and (min-width: 990px) {  
+    #skill-container {
+        margin-top: 10%;
+    }
     .skilltext {
         position: relative;
         margin: auto;
