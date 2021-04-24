@@ -50,8 +50,8 @@
 #skill-container {
     z-index: 2;
     position: relative;
-    margin: auto;
-    margin-top: 20%;
+    
+    margin-top: 30%;
 }
 @media only screen and (max-width: 768px) {
     .demo .main-title {
@@ -777,7 +777,7 @@ opacity: 1;
     #skill-container {
         z-index: 2;
         position: relative;
-        margin: auto;
+        
         margin-top: 30%;
     }
     .s5 {
@@ -826,7 +826,7 @@ opacity: 1;
     #skill-container {
         z-index: 2;
         position: relative;
-        margin: auto;
+        
         margin-top: 30%;
     }
     
