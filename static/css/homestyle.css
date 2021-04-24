@@ -2,6 +2,7 @@
     display: none;
 }
 #skill-container {
+    position: relative;
     margin-top: 20%;
 }
 .large-header {
@@ -815,7 +816,7 @@ opacity: 1;
 }
 @media only screen and (min-width: 990px) {  
     #skill-container {
-        margin-top: 20%;
+        margin-top: 10%;
     }
     .skilltext {
         position: relative;
