@@ -1,7 +1,9 @@
 #hiddenInfor {
     display: none;
 }
-
+#skill-container {
+    margin-top: 20%;
+}
 .large-header {
     position: relative;
     width: 100%;
