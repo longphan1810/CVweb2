@@ -57,7 +57,12 @@
     .demo .main-title {
         font-size: 3em;
     }
-    
+    #skill-container {
+        z-index: 2;
+        position: relative;
+        margin: auto;
+        margin-top: 20%;
+    }
 }
 
 /* text animation */
@@ -817,6 +822,12 @@ opacity: 1;
     }
     #menu li {
         display: inline-block; margin: auto; margin-top:5%; margin-left: 5%;
+    }
+    #skill-container {
+        z-index: 2;
+        position: relative;
+        margin: auto;
+        margin-top: 20%;
     }
     
 }
