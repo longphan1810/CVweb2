@@ -9,6 +9,15 @@
     {% block meta %}
     <meta property="og:image" content="{% static 'photo/slide/slide1.png' %}">
     {% endblock %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Z81HZJKHM"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8Z81HZJKHM');
+    </script>
     <!--weather-->
     
     <script src="{% static 'js/all.min.js' %}"></script>
