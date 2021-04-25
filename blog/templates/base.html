@@ -357,8 +357,11 @@
             </div>
             <script src="{% static 'js/index.js' %}"></script>
             <br>
+            <p style="color: #0066CC; font-size: 1.5em;">Bài viết mới nhất</p>
+            <div style="background-color: #0066CC; height: 2px; margin-top: -1em;"></div>
+            <br>
             {% for post in newest %}
-                <div class="row" style="margin: auto">
+                <div class="row" style="margin: auto; ">
                 <div class="col-4" style="margin:auto; margin:0; padding: 0">    
                     <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"><img style="width: 100%; " src="{{ post.image.url }}" ></a>
                 </div>
