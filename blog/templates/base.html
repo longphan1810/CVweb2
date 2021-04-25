@@ -9,6 +9,12 @@
     {% block meta %}
     <meta property="og:image" content="{% static 'photo/slide/slide1.png' %}">
     {% endblock %}
+    <!--weather-->
+    
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/moment.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto" rel="stylesheet">
@@ -36,6 +42,147 @@
         .lentop {display: none; bottom: 40%; right: 10px; cursor: pointer;  position: fixed; z-index: 1000;}
         .lentop div {background:#0066CC; border:2px solid #fff; border-radius:50%; padding:11px 12.5px; box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.3)}
         .lentop img {width:20px; height:20px;}
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            color: white;
+            background: linear-gradient(145deg, #2193b0, #6dd5ed);
+            width: 100%;
+            margin: 0;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 70%;
+            margin: 0 auto;
+            padding-top: 20px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid white;
+        }
+
+        .search-icon {
+            margin-left: -15px;
+            position: absolute;
+            left: 0;
+        }
+
+        .microphone {
+            position: absolute;
+            right: -15px;
+            cursor: pointer;
+        }
+
+        .microphone .recording-icon {
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: #e22d2d;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite linear;
+        }
+
+        .microphone.recording .recording-icon {
+            display: inline-block;
+        }
+
+        .microphone.recording .fa-microphone {
+            display: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 3px 0 rgba(173, 0, 0, .3);
+            }
+            65% {
+                box-shadow: 0 0 3px 5px rgba(173, 0, 0, .3);
+            }
+            100% {
+                box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0);
+            }
+        }
+
+        #search-input {
+            border: 0;
+            outline: 0;
+            padding: 3px 3px 3px 20px;
+            background: transparent;
+            height: 20px;
+            color: white;
+        }
+
+        #search-input::placeholder {
+            color: rgb(206,206,206);
+        }
+
+        .info-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            padding: 80px 50px;
+        }
+
+        .city-name {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .weather-state {
+            font-size: 13px;
+        }
+
+        .weather-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .temperature {
+            font-size: 80px;
+            font-weight: lighter;
+            line-height: 1;
+            position: relative;
+        }
+
+        .temperature::after {
+            content: 'o';
+            position: absolute;
+            font-size: 30px;
+        }
+
+        .additional-section {
+            border-top: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
+        .additional-section .row {
+            margin-bottom: 5px;
+            display: flex;
+        }
+
+        .additional-section .item {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .additional-section .item .label {
+            font-weight: bold;
+        }
+
+
     </style>
     
         {% block css %} {% endblock %}
@@ -164,13 +311,48 @@
         <div class="col-xl-2">
             
             <br>
-            <a class="weatherwidget-io" href="https://forecast7.com/en/16d05108d07/da-nang/" data-label_1="THỜI TIẾT" data-label_2="ĐÀ NẴNG" data-theme="pure" >THỜI TIẾT ĐÀ NẴNG</a>
-            <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-            </script>
-            <br>
-            <p style="color: #0066CC; font-size: 1.5em;">Bài viết mới nhất</p>
-            <div style="background-color: #0066CC; height: 2px; margin-top: -1em;"></div>
+            <div class="container">
+                <div class="main-section">
+                    <div class="search-bar">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" name="search-city" id="search-input" placeholder="Tìm kiếm thành phố...">
+                        <span class="microphone">
+                            <i class="fas fa-microphone"></i>
+                            <span class="recording-icon"></span>
+                        </span>
+                        
+                    </div>
+                    <div class="info-wrapper">
+                        <p class="city-name">--</p>
+                        <p class="weather-state">--</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="weather-icon">
+                        <p class="temperature">--</p>
+                    </div>
+                </div>
+                <div class="additional-section">
+                    <div class="row">
+                        <div class="item">
+                            <div class="label">MT Mọc</div>
+                            <div class="value sunrise">--</div>
+                        </div>
+                        <div class="item">
+                            <div class="label">MT Lặn</div>
+                            <div class="value sunset">--</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item">
+                            <div class="label">Độ ẩm</div>
+                            <div class="value"><span class="humidity">--</span>%</div>
+                        </div>
+                        <div class="item">
+                            <div class="label">Gió</div>
+                            <div class="value"><span class="wind-speed">--</span> km/h</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="{% static 'js/index.js' %}"></script>
             <br>
             {% for post in newest %}
                 <div class="row" style="margin: auto">
