@@ -59,7 +59,9 @@ $default-color: #f10071;
             top: 6vh;
             .banner-blockTitle--title {
                 font-size: 2.5em;
+                
                 &::before {
+                    background-image: linear-gradient(to left, white, rgb(193, 207, 223));
                     right: 80%;
                 }
             }
