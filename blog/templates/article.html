@@ -46,7 +46,7 @@
     <p style="margin-top: 5%"><h5><strong><label>Bài viết liên quan:</label></strong></h5></p>
     {% for post in articleList %}
         
-        <a href="{% url 'blog:post' post.topic post.title %}" target="_blank"> <h6 style="color:#0066CC ;"> {{ post.title }} </h6></a>
+        <a href="{% url 'blog:post' post.topic post.slug %}" target="_blank"> <h6 style="color:#0066CC ;"> {{ post.title }} </h6></a>
     {% endfor %}
 </div>
 </div>
