@@ -162,15 +162,15 @@ body {
             font-size: 4.5em;
             font-weight: bold;
             transform: skewY(-20deg);
-            font-family: fantasy;
+            font-family: 'Anton', sans-serif;
             animation: title-show 0.5s linear;
             &::before {
                 content: '';
                 position: absolute;
-                top: 0.21em;
+                top: 0.3em;
                 right: 84%;
                 display: block;
-                height: 0.8em;
+                height: 0.9em;
                 width: 20vw;
                 background-image: linear-gradient(to right, transparent, white);
             
@@ -193,7 +193,7 @@ body {
         left: 32%;
         top: 27.5%;
         transform: skewY(-20deg);
-        font-family: fantasy;
+        font-family: 'Anton', sans-serif;
         color: $text-color;
         letter-spacing: 3px;
         
@@ -203,7 +203,7 @@ body {
         left: 32%;
         top: 27%;
         transform: skewY(-20deg);
-        font-family: fantasy;
+        font-family:  'Anton', sans-serif;
         color: $text-color;
         letter-spacing: 3px;
     }
@@ -212,7 +212,7 @@ body {
         left: 32%;
         top: 22%;
         transform: skewY(-20deg);
-        font-family: fantasy;
+        font-family:  'Anton', sans-serif;
         color: $text-color;
         letter-spacing: 3px;
         
@@ -246,7 +246,7 @@ body {
             position: absolute;
             display: none;
             transform: skewY(-20deg);
-            font-family: fantasy;
+            font-family:  'Anton', sans-serif;
             color: $text-color;
             letter-spacing: 3px;
             max-width: 33%;

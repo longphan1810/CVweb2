@@ -218,7 +218,7 @@ body {
   font-weight: bold;
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   -webkit-animation: title-show 0.5s linear;
           animation: title-show 0.5s linear;
 }
@@ -226,10 +226,10 @@ body {
 .banner .banner-blockTitle .banner-blockTitle--title::before {
   content: '';
   position: absolute;
-  top: 0.21em;
+  top: 0.3em;
   right: 84%;
   display: block;
-  height: 0.8em;
+  height: 0.9em;
   width: 20vw;
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(white));
   background-image: linear-gradient(to right, transparent, white);
@@ -252,7 +252,7 @@ body {
   top: 27.5%;
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   color: gray;
   letter-spacing: 3px;
 }
@@ -263,7 +263,7 @@ body {
   top: 27%;
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   color: gray;
   letter-spacing: 3px;
 }
@@ -274,7 +274,7 @@ body {
   top: 22%;
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   color: gray;
   letter-spacing: 3px;
 }
@@ -314,7 +314,7 @@ body {
   display: none;
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   color: gray;
   letter-spacing: 3px;
   max-width: 33%;
