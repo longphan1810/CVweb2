@@ -79,7 +79,7 @@
         <div class="flyer-container">
             <img id="flyer-1" class="flyer-container--item" src="{% static 'photo/sp3/ll6.png' %}" />
             <img id="flyer-2" class="flyer-container--item" src="{% static 'photo/sp3/ll5.png' %}" />
-            <img id="flyer-3" class="flyer-container--item" src="{% static 'photo/sp3/map.png' %}" />
+            <img id="flyer-3" class="flyer-container--item" src="{% static 'photo/sp3/map2.png' %}" />
 
         </div>
         <div class="flyer-text">
@@ -336,7 +336,7 @@
 
 
                     });
-                    
+
 
 
                 });
@@ -363,49 +363,7 @@
 
 
                     });
-                    $(".program-blog").click(function () {
 
-                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
-
-                        $(".program-close").css({ 'right': '30px' });
-                        $("#program-1").show()
-                        $("#program-2").hide()
-                        $("#program-3").hide()
-
-                    });
-                    $(".program-profile").click(function () {
-
-                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
-
-                        $(".program-close").css({ 'right': '30px' });
-                        $("#program-2").show()
-                        $("#program-3").hide()
-                        $("#program-1").hide()
-                    });
-                    $(".program-chatapp").click(function () {
-
-                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
-
-                        $(".program-close").css({ 'right': '30px' });
-                        $("#program-3").show()
-                        $("#program-2").hide()
-                        $("#program-1").hide()
-                    });
-                    $(".program-close").click(function () {
-
-                        $(".program-container").animate({ 'top': '10vh' });
-                        $(".program-container").css({
-                            'flex-flow': 'row'
-
-                        });
-                        $(".program-close").css({ 'right': '-50px' });
-                        $("#program-3").hide()
-                        $("#program-2").hide()
-                        $("#program-1").hide()
-                    });
-                    $(".menu-mini-icon").click(function () {
-                        $(".menu").toggle("slow");
-                    });
 
 
                 });
@@ -432,7 +390,7 @@
 
 
                     });
-                    
+
 
                 });
             }
@@ -501,8 +459,6 @@
                     $(".menu-mini-icon").click(function () {
                         $(".menu").toggle("slow");
                     });
-
-
                 });
             }
         }
@@ -530,7 +486,7 @@
                     });
                     $(".program-blog").click(function () {
 
-                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").animate({ 'top': '-30vh', 'left': '80%', 'width': '15vw' });
                         $(".program-container").css({
                             'flex-flow': 'column'
 
@@ -543,7 +499,7 @@
                     });
                     $(".program-profile").click(function () {
 
-                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").animate({ 'top': '-30vh', 'left': '80%', 'width': '15vw' });
                         $(".program-container").css({
                             'flex-flow': 'column'
 
@@ -555,7 +511,7 @@
                     });
                     $(".program-chatapp").click(function () {
 
-                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").animate({ 'top': '-30vh', 'left': '80%', 'width': '15vw' });
                         $(".program-container").css({
                             'flex-flow': 'column'
 
@@ -567,7 +523,7 @@
                     });
                     $(".program-close").click(function () {
 
-                        $(".program-container").animate({'left':'0', 'top': '0vh', 'width': '100%' });
+                        $(".program-container").animate({ 'left': '0', 'top': '0vh', 'width': '100%' });
                         $(".program-container").css({
                             'flex-flow': 'row'
 
@@ -590,23 +546,23 @@
         var a = window.matchMedia("(max-width: 768px)")
         var b = window.matchMedia("(max-width: 992px)")
         var c = window.matchMedia("(min-width: 992px)")
-        
-        
-        
+
+
+
         max600px(y)
         max768px(a)
         max992px(b)
-        
-        
-        
+
+
+
         min992px(c)
         min1500px(x)
-        
+
         y.addEventListener(max600px)
         a.addEventListener(max768px)
         b.addEventListener(max992px)
-        
-        
+
+
         c.addEventListener(min992px)
         x.addEventListener(min1500px)
     </script>
