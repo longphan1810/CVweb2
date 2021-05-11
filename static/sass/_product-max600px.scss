@@ -58,7 +58,7 @@ $default-color: #f10071;
             left: 25%;
             top: 6vh;
             .banner-blockTitle--title {
-                font-size: 1.1em;
+                font-size: 1em;
                 &::before {
                     right: 80%;
                 }
@@ -66,25 +66,25 @@ $default-color: #f10071;
         }
         .banner-text--text1 {
             font-size: 0.5em;
-            top: 7.5vh;
+            top: 7vh;
             
             
         }
         .banner-text--text2 {
             font-size: 0.5em;
-            top: 7vh;
+            top: 6.5vh;
             
         }
         .banner-text--text3 {
             font-size: 0.5em;
-            top: 6vh;
+            top: 5.5vh;
             width: 40%;
             
         }
     }
     .flyer {
-       
-        height: 30vh;
+        top: 10vh;
+        height: 40vh;
         .flyer-container {
             top: 0vh;
         }
@@ -94,15 +94,15 @@ $default-color: #f10071;
                 font-size: 0.5em;
             }
             #flyer-text-1 {
-                top: 1vh;
+                top: 0vh;
                 left: 2%;
             }
             #flyer-text-2 {
-                top: -7vh;
+                top: -8vh;
                 left: 40%;
             }
             #flyer-text-3 {
-                top: -12vh;
+                top: -13vh;
                 left: 75%;
             }
         }
@@ -216,6 +216,7 @@ $default-color: #f10071;
             }
         }
     }
+    
     #text-app {
         top: -10vh;
     }
@@ -288,7 +289,7 @@ $default-color: #f10071;
             
         }
     }
-
+    
     @keyframes standy-text-show {
         0% {
             opacity: 0;
