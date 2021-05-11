@@ -229,7 +229,7 @@ body {
         display: flex;
         transform: skewY(-20deg);
         overflow: hidden;
-        
+        max-height: 70vh;
         width: 100%;
         top: -15vh;
         .flyer-container--item {

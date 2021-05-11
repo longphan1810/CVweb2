@@ -293,6 +293,7 @@ body {
   -webkit-transform: skewY(-20deg);
           transform: skewY(-20deg);
   overflow: hidden;
+  max-height: 70vh;
   width: 100%;
   top: -15vh;
 }
@@ -2129,7 +2130,7 @@ body {
     top: 6vh;
   }
   .banner .banner-blockTitle .banner-blockTitle--title {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .banner .banner-blockTitle .banner-blockTitle--title::before {
     right: 80%;
