@@ -1,418 +1,618 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        {% load static %}
-        <title> 
-            Long Phan - Myproducts
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="{% static 'ava.png' %}">
-        <script type="text/javascript" src="{% static 'js/three.js' %}"></script>
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products</title>
+    <link rel="icon" href="{% static 'ava4.png' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'sass/product.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<body>
+    <div class="menu-box">
+        <div class="menu-mini-icon"><i class="fas fa-bars"></i></div>
+        <div class="menu">
+            <a href="../" class="menu-text">My Space</a>
+            <p class="menu-text menu-design">Design</p>
+            <p class="menu-text menu-programming">Programming</p>
+        </div>
+    </div>
+    <div class="menu-fixed">
+        <div class="menu">
+            <p class="menu-text menu-design">Design</p>
+            <p class="menu-text menu-programming">Programming</p>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="banner-block1"></div>
+        <div class="banner-blockTitle">
+            <p class="banner-blockTitle--title">B</p>
+            <p class="banner-blockTitle--title">A</p>
+            <p class="banner-blockTitle--title">N</p>
+            <p class="banner-blockTitle--title">N</p>
+            <p class="banner-blockTitle--title">E</p>
+            <p class="banner-blockTitle--title">R</p>
+        </div>
+        <div id="slideshow">
+            <img id="banner2" class="banner-block2" src="{% static 'photo/sp1/banner2.png' %}" />
+            <img id="banner3" class="banner-block2" src="{% static 'photo/sp1/banner3.png' %}" />
+            <img id="banner1" class="banner-block2" src="{% static 'photo/sp1/banner1.png' %}" />
+        </div>
+        <div id="banner-text">
+            <p class="banner-text--text3">WEBSITE HUE UNIVERSITY OF FOREIGN LANGUAGES</p>
+            <p class="banner-text--text1">WEBSITE LABANTOUR</p>
+            <p class="banner-text--text2">WEBSITE DANANGHOTELS</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#slideshow > img:gt(-1)").hide();
+        $("#banner-text > p").hide();
+        setInterval(function () {
+            $("#slideshow > img:first")
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo("#slideshow");
 
-        <style>
-            #world {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                background: linear-gradient(#e4e0ba, #f7d9aa);
-            }
-        </style>
-    </head>
-    <body>
-        <div id="world"></div>
+        }, 3000);
+        setInterval(function () {
+
+            $("#banner-text > p:first")
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo("#banner-text");
+        }, 3000);
+    </script>
+    <div class="flyer">
+        <div class="flyer-container">
+            <img id="flyer-1" class="flyer-container--item" src="{% static 'photo/sp3/ll6.png' %}" />
+            <img id="flyer-2" class="flyer-container--item" src="{% static 'photo/sp3/ll5.png' %}" />
+            <img id="flyer-3" class="flyer-container--item" src="{% static 'photo/sp3/map.png' %}" />
+
+        </div>
+        <div class="flyer-text">
+            <p id="flyer-text-1">VIETNAM DEPARTMENT, HUE UNIVERSITY OF FOREIGN LANGUAGES</p>
+            <p id="flyer-text-2">HUE UNIVERSITY OF FOREIGN LANGUAGES 2021</p>
+            <p id="flyer-text-3">DANANG TRAVEL MAP</p>
+        </div>
         <script type="text/javascript">
-            var Colors = {
-                red:0xf25346,
-                white:0xd8d0d1,
-                brown:0x59332e,
-                pink:0xF5986E,
-                brownDark:0x23190f,
-                blue:0x68c3c0,
-            };
-            window.addEventListener('load', init, false);
+            $("#flyer-1").delay(3000).fadeIn();
+            $("#flyer-2").delay(3500).fadeIn();
+            $("#flyer-3").delay(4000).fadeIn();
+            $("#flyer-text-1").delay(5000).fadeIn(500);
+            $("#flyer-text-2").delay(5500).fadeIn(500);
+            $("#flyer-text-3").delay(6000).fadeIn(500);
+        </script>
+    </div>
+    <div id="text-art" class="text-standy-voucher">
+        <p id="text-standy-1">Some</p>
+        <p id="text-standy-2">Mural Art</p>
+    </div>
+    <div class="art">
+        <div class="art-block">
+            <div class="art-block-inner">
+                <img class="art-front--img" src="{% static 'photo/sp4/tranh1.png' %}" />
+                <div class="art-back--content">
+                    <p class="art-back-title">MURAL ART</p></br>
+                    <p>"No pressure no money"</p>
+                </div>
+            </div>
+        </div>
+        <div class="art-block">
+            <div class="art-block-inner">
+                <img class="art-front--img" src="{% static 'photo/sp4/tranh2.png' %}" />
+                <div class="art-back--content">
+                    <p class="art-back-title">MURAL ART</p></br>
+                    <p>"Who understands the customer that he or she sells goods"</p>
+                </div>
+            </div>
+        </div>
+        <div class="art-block">
+            <div class="art-block-inner">
+                <img class="art-front--img" src="{% static 'photo/sp4/tranh3.png' %}" />
+                <div class="art-back--content">
+                    <p class="art-back-title">MURAL ART</p></br>
+                    <p>"Do not ever think, living and working must have conscience and responsibility"</p>
+                </div>
+            </div>
+        </div>
+        <div class="art-block">
+            <div class="art-block-inner">
+                <img class="art-front--img" src="{% static 'photo/sp4/tranh4.png' %}" />
+                <div class="art-back--content">
+                    <p class="art-back-title">MURAL ART</p></br>
+                    <p>"What I can do to better for customer today"</p>
+                </div>
+            </div>
+        </div>
+        <div class="art-block">
+            <div class="art-block-inner">
+                <img class="art-front--img" src="{% static 'photo/sp4/tranh5.png' %}" />
+                <div class="art-back--content">
+                    <p class="art-back-title">MURAL ART</p></br>
+                    <p>"Professional offers, successful sales"</p>
+                </div>
+            </div>
+        </div>
 
-            function init() {
-                createScene();
-                createLights();
-                createPlane();
-                createSea();
-                createSky();
+    </div>
 
-                //thêm listener
-                document.addEventListener('mousemove', handleMouseMove, false);
+    <div id="text-standy" class="text-standy-voucher">
+        <p id="text-standy-1">Some</p>
+        <p id="text-standy-2">Standy & Voucher</p>
+    </div>
+    <div class="standy-voucher-container">
+        <div class="standy-voucher">
+            <div>
+                <div class="standy-block">
+                    <img id="standy-1" class="standy-block-item" src="{% static 'photo/sp2/standee1.png' %}" />
+                    <img id="standy-2" class="standy-block-item" src="{% static 'photo/sp2/standee2.png' %}" />
+                    <img id="standy-3" class="standy-block-item" src="{% static 'photo/sp2/standee3.png' %}" />
+                </div>
+                <div class="standy-text">
+                    <p id="standy-text-0" class="standy-text-title">Standee</p>
+                    <p id="standy-text-1" class="standy-text-decrib">Hue University of Foreign Language Admission 2020
+                    </p>
+                    <p id="standy-text-2" class="standy-text-decrib">VACS recruitment</p>
+                    <p id="standy-text-3" class="standy-text-decrib">Danang tours and attractions</p>
+                </div>
+                <div class="voucher-container">
+                    <div class="voucher-block">
+                        <img class="voucher-block-item" id="voucher-1" src="{% static 'photo/sp5/voucher1.png' %}" />
+                        <img class="voucher-block-item" id="voucher-2" src="{% static 'photo/sp5/voucher2.png' %}" />
+                        <img class="voucher-block-item" id="voucher-3" src="{% static 'photo/sp5/voucher3.png' %}" />
+                    </div>
+                    <div class="voucher-text">
+                        <p class="voucher-text-title">Voucher</p>
+                        <p id="voucher-text-1" class="voucher-text-decrib">Opening Nuvola Furniture Company</p>
+                        <p id="voucher-text-2" class="voucher-text-decrib">Opening Nuvola Furniture Company</p>
+                        <p id="voucher-text-3" class="voucher-text-decrib">Opening Rom's Casa hotel Danang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // $(".standy-block > img:gt(0)").hide();
+        // setInterval(function () {
+        //     $(".standy-block > img:first")
+        //     .fadeOut(1000)
+        //     .next()
+        //     .fadeIn(1000)
+        //     .end()
+        //     .appendTo(".standy-block");
+        // }, 3000);
 
-                loop();
-            }
-            var scene,
-                camera, fieldOfView, aspectRatio, nearPlane, farPlane, HEIGHT, WIDTH,
-                renderer, container;
+    </script>
 
-            function createScene() {
-                // Lấy ra width và height của màn hình,
-                // dùng để cài đặt tỉ lệ khung hình (aspect ratio) cho camera
-                // và size của renderer.
-                HEIGHT = window.innerHeight;
-                WIDTH = window.innerWidth;
+    <div id="text-app" class="text-standy-voucher">
+        <p id="text-standy-1">Some</p>
+        <p id="text-standy-2">Website & App</p>
+    </div>
+    <div class="program">
+        <div class="program-container">
 
-                // Tạo scene
-                scene = new THREE.Scene();
+            <div class="program-blog">
+                <div class="program-background"></div>
+                <p class="program-title-1">Blog</p>
+                <p class="program-title-2">Website</p>
+                <img class="program-photo"></img>
+                <div class="program-draw-1"></div>
+                <div class="program-draw-2"></div>
+                <p class="program-decrib"></p>
+            </div>
+            <div class="program-profile">
+                <div class="program-background"></div>
+                <p class="program-title-1">Profile</p>
+                <p class="program-title-2">Website</p>
+                <img class="program-photo"></img>
+                <div class="program-draw-1"></div>
+                <div class="program-draw-2"></div>
+                <p class="program-decrib"></p>
+            </div>
+            <div class="program-chatapp">
+                <div class="program-background"></div>
+                <p class="program-title-1">Chat</p>
+                <p class="program-title-2">App</p>
+                <img class="program-photo"></img>
+                <div class="program-draw-1"></div>
+                <div class="program-draw-2"></div>
+                <p class="program-decrib"></p>
+            </div>
+        </div>
+        <div class="program-close-container">
+            <div class="program-close">
+                <p style="font-size: 1.5em; font-weight: lighter;">&#10006</p>
+            </div>
+        </div>
+        <div class="program-click-container">
+            <div id="program-1" class="program-click">
+                <img class="program-photo" src="{% static 'blog_product.png' %}"></img>
+                <div class="program-decrib">
+                    <p class="program-decrib-1">Blog Website</p>
+                    <p class="program-decrib-2">Languages: Python, html, CSS, JavaScript </br>
+                        Framework: Django, Bootstrap</br>
+                        Library: Jquery</br>
+                        Database: MySQL</p>
+                </div>
+            </div>
+            <div id="program-2" class="program-click">
+                <img class="program-photo" src="{% static 'profile-website.png' %}"></img>
+                <div class="program-decrib">
+                    <p class="program-decrib-1">Profile Website</p>
+                    <p class="program-decrib-2">Languages: Python, html, CSS, JavaScript </br>
+                        Framework: Django, Bootstrap</br>
+                        Library: Jquery, ThreeJS</br>
+                    </p>
+                </div>
+            </div>
+            <div id="program-3" class="program-click">
+                <img class="program-photo" src="{% static 'chat-app2.png' %}"></img>
+                <div class="program-decrib">
+                    <p class="program-decrib-1">Chat App</p>
+                    <p class="program-decrib-2">Languages: JavaScript, html, CSS</br>
+                        Library: React</br>
+                        Environment: NodeJS</br>
+                        Database: MongoDB</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                // Thêm hiệu ứng sương mù vào scene, cùng màu với
-                // màu nền đã style trước đó
-                scene.fog = new THREE.Fog(0xf7d9aa, 100, 950);
 
-                // Tạo camera
-                aspectRatio = WIDTH / HEIGHT;
-                fieldOfView = 60;
-                nearPlane = 1;
-                farPlane = 10000;
-                camera = new THREE.PerspectiveCamera(
-                    fieldOfView,
-                    aspectRatio,
-                    nearPlane,
-                    farPlane
-                );
+    <script>
+        $(function () {
+            $("#standy-1").hover(function () {
+                $(this).css('opacity', '1');
+                $("#standy-text-1").css('color', '#f10071')
+            }, function () {
+                $(this).css('opacity', '0.7');
+                $("#standy-text-1").css('color', 'white')
+            });
+            $("#standy-2").hover(function () {
+                $(this).css('opacity', '1');
+                $("#standy-text-2").css('color', '#f10071')
+            }, function () {
+                $(this).css('opacity', '0.7');
+                $("#standy-text-2").css('color', 'white')
+            });
+            $("#standy-3").hover(function () {
+                $(this).css('opacity', '1');
+                $("#standy-text-3").css('color', '#f10071')
+            }, function () {
+                $(this).css('opacity', '0.7');
+                $("#standy-text-3").css('color', 'white')
+            });
+            // $(".voucher-text").hover(function () {
+            //         $(".voucher-text-title").animate({left:'50vw'});
+            //         $("#voucher-text-1").animate({left:'30vw', top: '-20vh' });
+            //         $("#voucher-text-2").animate({left:'30vw', top: '0vh' });
+            //         $("#voucher-text-3").animate({left:'30vw', top: '20vh'});
+            //         $("#voucher-text-1, #voucher-text-2, #voucher-text-3").css('color', '#f10071')
+            //         $(".voucher-block").animate({left:'10vw'});
 
-                // Đặt vị trí cho camera
-                camera.position.x = 0;
-                camera.position.z = 200;
-                camera.position.y = 100;
-
-                // Tạo renderer
-                renderer = new THREE.WebGLRenderer({
-                    // Cho phép trong suốt để hiển thị màu nền
-                    // đã định nghĩa trong CSS
-                    alpha: true,
-
-                    // Bật khử răng cưa; hiệu năng sẽ giảm
-                    // nhưng sẽ ổn thôi vì project này ít đối tượng
-                    antialias: true
-                });
-
-                // Xác định kích cỡ của renderer; trong trường hợp này,
-                // là full toàn màn hình
-                renderer.setSize(WIDTH, HEIGHT);
-
-                // Cho phép render bóng đổ
-                renderer.shadowMap.enabled = true;
-
-                // Thêm DOM của renderer vào
-                // container ta đã tạo trong HTML
-                container = document.getElementById('world');
-                container.appendChild(renderer.domElement);
-
-                // Nếu người dùng resize trình duyệt
-                // cần cập nhật lại camera và size của renderer
-                window.addEventListener('resize', handleWindowResize, false);
-            }
-            function handleWindowResize() {
-                // cập nhật lại kích thước của renderer và camera
-                HEIGHT = window.innerHeight;
-                WIDTH = window.innerWidth;
-                renderer.setSize(WIDTH, HEIGHT);
-                camera.aspect = WIDTH / HEIGHT;
-                camera.updateProjectionMatrix();
-            }
-            var hemisphereLight, shadowLight;
-
-            function createLights() {
-                // Nguồn sáng bán cầu là loại có màu tô chuyển (gradient)
-                // tham số đầu tiên là màu trời, thứ 2 là màu đất,
-                // thứ 3 là cường độ ánh sáng
-                hemisphereLight = new THREE.HemisphereLight(0xaaaaaa,0x000000, .9)
-
-                // Nguồn sáng có hướng tỏa ra từ 1 vị trí nhất định
-                // Nó giống như mặt trời, nghĩa là các tia được tạo ra song song với nhau.
-                shadowLight = new THREE.DirectionalLight(0xffffff, .9);
-
-                // Đặt vị trí cho nguồn sáng
-                shadowLight.position.set(150, 350, 350);
-
-                // Cho phép phủ bóng
-                shadowLight.castShadow = true;
-
-                // cài đặt vùng nhìn thấy của bóng đổ
-                shadowLight.shadow.camera.left = -400;
-                shadowLight.shadow.camera.right = 400;
-                shadowLight.shadow.camera.top = 400;
-                shadowLight.shadow.camera.bottom = -400;
-                shadowLight.shadow.camera.near = 1;
-                shadowLight.shadow.camera.far = 1000;
-
-                // cài đặt độ phân giải của bóng đổ; càng cao càng đẹp,
-                // nhưng cũng càng nặng nề hơn
-                shadowLight.shadow.mapSize.width = 2048;
-                shadowLight.shadow.mapSize.height = 2048;
-
-                // thêm vào scene để kích hoạt
-                scene.add(hemisphereLight);
-                scene.add(shadowLight);
-            }
-            // Định nghĩa đối tượng Sea
-            Sea = function(){
-
-            // tạo khối hình trụ
-            // các tham số:
-            // bán kính mặt trên, bán kính mặt đáy, chiều cao, số lượng phân khúc trên bán kính, số lượng phân khúc theo chiều dọc
-            var geom = new THREE.CylinderGeometry(600,600,800,40,10);
-
-            // xoay trên trục X
-            geom.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI/2));
-
-            // tạo chất liệu
-            var mat = new THREE.MeshPhongMaterial({
-                color:Colors.blue,
-                transparent:true,
-                opacity:.6,
-                shading:THREE.FlatShading,
+            //     }, )
+            $(".menu-design").click(function () {
+                $("body,html").animate({ scrollTop: 0 }, "slow");
+            });
+            $(".menu-programming").click(function () {
+                $("body,html").animate({ scrollTop: 5000 }, "slow");
             });
 
-            // Để tạo một đối tượng trong Three.js, ta phải tạo ra một lưới (mesh)
-            // là sự kết hợp của một hình khối và chất liệu
-            this.mesh = new THREE.Mesh(geom, mat);
 
-            // Cho phép bóng đổ trên biển
-            this.mesh.receiveShadow = true;
-            }
 
-            // Khởi tạo và thêm vào scene
+        });
+        function min1500px(x) {
+            if (x.matches) {
+                $(function () {
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 100) $(".menu-fixed").fadeIn();
+                        else $(".menu-fixed").fadeOut();
+                        if ($(this).scrollTop() > 1000) $("#text-art").fadeIn(490);
+                        if ($(this).scrollTop() > 1300) $(".art-front--img").css({ 'opacity': '1', 'height': '50vh' });
+                        if ($(this).scrollTop() > 2000) $("#text-standy").fadeIn(490);
+                        if ($(this).scrollTop() > 2500) {
+                            $(".standy-block").fadeIn();
+                            $(".standy-text").fadeIn();
+                        };
+                        if ($(this).scrollTop() > 3400) {
+                            $(".voucher-block").fadeIn(500);
+                            $(".voucher-text").fadeIn(500);
+                        };
+                        if ($(this).scrollTop() > 3800) $("#text-app").fadeIn(490);
+                        if ($(this).scrollTop() > 3900) $(".program-container").css({ 'opacity': '1' });
 
-            var sea;
 
-            function createSea(){
-                sea = new Sea();
+                    });
+                    
 
-                // đặt vị trí phía dưới scene
-                sea.mesh.position.y = -600;
 
-                // thêm lưới này vào scene
-                scene.add(sea.mesh);
-            }
-            Cloud = function(){
-                // Tạo một container rỗng để chứa các phần của đám mây
-                this.mesh = new THREE.Object3D();
-
-                // tạo khối lập phương;
-                // khối này sẽ được nhân ra để tạo ra các đám mây
-                var geom = new THREE.BoxGeometry(20,20,20);
-
-                // tạo chất liệu; chất liệu màu trắng là đủ
-                var mat = new THREE.MeshPhongMaterial({
-                    color:Colors.white,
                 });
-
-                // nhân hình khối lên một số ngẫu nhiên lần
-                var nBlocs = 3+Math.floor(Math.random()*3);
-                for (var i=0; i<nBlocs; i++ ){
-
-                    // tạo lưới từ hình khối
-                    var m = new THREE.Mesh(geom, mat);
-
-                    // đặt vị trí và góc quay của mỗi khối ngẫu nhiên
-                    m.position.x = i*15;
-                    m.position.y = Math.random()*10;
-                    m.position.z = Math.random()*10;
-                    m.rotation.z = Math.random()*Math.PI*2;
-                    m.rotation.y = Math.random()*Math.PI*2;
-
-                    // đặt kích thước của khối ngẫu nhiên
-                    var s = .1 + Math.random()*.9;
-                    m.scale.set(s,s,s);
-
-                    // cho phép mỗi khối phủ và nhận bóng đổ
-                    m.castShadow = true;
-                    m.receiveShadow = true;
-
-                    // thêm khối vào container
-                    this.mesh.add(m);
-                }
             }
-            // Định nghĩa đối tượng Sky
-            Sky = function(){
-                // Tạo container rỗng
-                this.mesh = new THREE.Object3D();
+        }
+        function max600px(x) {
+            if (x.matches) {
+                $(function () {
+                    $(window).scroll(function () {
 
-                // chọn số  lượng đám mây rải rác trên bầu trời
-                this.nClouds = 20;
+                        if ($(this).scrollTop() > 200) $("#text-art").fadeIn(490);
+                        if ($(this).scrollTop() > 400) $(".art-front--img").css({ 'opacity': '1', 'height': '20vh' });
+                        if ($(this).scrollTop() > 700) $("#text-standy").fadeIn(490);
+                        if ($(this).scrollTop() > 900) {
+                            $(".standy-block").fadeIn();
+                            $(".standy-text").fadeIn();
+                        };
+                        if ($(this).scrollTop() > 1200) {
+                            $(".voucher-block").fadeIn(500);
+                            $(".voucher-text").fadeIn(500);
+                        };
+                        if ($(this).scrollTop() > 1600) $("#text-app").fadeIn(490);
+                        if ($(this).scrollTop() > 1900) $(".program-container").css({ 'opacity': '1' });
 
-                // Để phân phối các đám mây một cách nhất quán,
-                // chúng ta phải đặt chúng theo một góc thống nhất
-                var stepAngle = Math.PI*2 / this.nClouds;
 
-                // tạo các đám mây
-                for(var i=0; i<this.nClouds; i++){
-                    var c = new Cloud();
+                    });
+                    $(".program-blog").click(function () {
 
-                    // đặt góc xoay và vị trí của mỗi đám mây;
-                    // chúng ta sẽ dùng chút lượng giác
-                    var a = stepAngle*i; // đây là góc của đám mây
-                    var h = 750 + Math.random()*200; // đây là khoảng cách giữa trung điểm của trục và đám mây
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
 
-                    // Lượng giác!!! Hi vọng bạn vẫn còn nhớ chút Toán học :)
-                    // nếu không thì:
-                    // đơn giản là chuyển đổi tọa độ cực (góc, khoảng cách) sang tọa độ Descartes (x, y)
-                    c.mesh.position.y = Math.sin(a)*h;
-                    c.mesh.position.x = Math.cos(a)*h;
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-1").show()
+                        $("#program-2").hide()
+                        $("#program-3").hide()
 
-                    // xoay đám mây theo vị trí của nó
-                    c.mesh.rotation.z = a + Math.PI/2;
+                    });
+                    $(".program-profile").click(function () {
 
-                    // để kết quả tốt hơn, ta đặt các đám mây
-                    // ở độ sâu ngẫu nhiên trong scene
-                    c.mesh.position.z = -400-Math.random()*400;
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
 
-                    // và cả độ phóng ngẫu nhiên cho mỗi đám mây
-                    var s = 1+Math.random()*2;
-                    c.mesh.scale.set(s,s,s);
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-2").show()
+                        $("#program-3").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-chatapp").click(function () {
 
-                    // đừng quên thêm lưới vào container
-                    this.mesh.add(c.mesh);
-                }
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
+
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-3").show()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-close").click(function () {
+
+                        $(".program-container").animate({ 'top': '10vh' });
+                        $(".program-container").css({
+                            'flex-flow': 'row'
+
+                        });
+                        $(".program-close").css({ 'right': '-50px' });
+                        $("#program-3").hide()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".menu-mini-icon").click(function () {
+                        $(".menu").toggle("slow");
+                    });
+
+
+                });
             }
+        }
+        function max768px(x) {
+            if (x.matches) {
+                $(function () {
+                    $(window).scroll(function () {
 
-            // Bây giờ ta khởi tạo bầu trời và đẩy tâm của nó
-            // về phía dưới màn hình một chút
+                        if ($(this).scrollTop() > 150) $("#text-art").fadeIn(490);
+                        if ($(this).scrollTop() > 350) $(".art-front--img").css({ 'opacity': '1', 'height': '25vh' });
+                        if ($(this).scrollTop() > 650) $("#text-standy").fadeIn(490);
+                        if ($(this).scrollTop() > 900) {
+                            $(".standy-block").fadeIn();
+                            $(".standy-text").fadeIn();
+                        };
+                        if ($(this).scrollTop() > 1200) {
+                            $(".voucher-block").fadeIn(500);
+                            $(".voucher-text").fadeIn(500);
+                        };
+                        if ($(this).scrollTop() > 1600) $("#text-app").fadeIn(490);
+                        if ($(this).scrollTop() > 1900) $(".program-container").css({ 'opacity': '1' });
 
-            var sky;
 
-            function createSky(){
-                sky = new Sky();
-                sky.mesh.position.y = -600;
-                scene.add(sky.mesh);
+                    });
+                    
+
+                });
             }
-            var AirPlane = function() {
+        }
+        function max992px(x) {
+            if (x.matches) {
+                $(function () {
+                    $(window).scroll(function () {
 
-                this.mesh = new THREE.Object3D();
+                        if ($(this).scrollTop() > 150) $("#text-art").fadeIn(490);
+                        if ($(this).scrollTop() > 350) $(".art-front--img").css({ 'opacity': '1', 'height': '25vh' });
+                        if ($(this).scrollTop() > 650) $("#text-standy").fadeIn(490);
+                        if ($(this).scrollTop() > 900) {
+                            $(".standy-block").fadeIn();
+                            $(".standy-text").fadeIn();
+                        };
+                        if ($(this).scrollTop() > 1200) {
+                            $(".voucher-block").fadeIn(500);
+                            $(".voucher-text").fadeIn(500);
+                        };
+                        if ($(this).scrollTop() > 1600) $("#text-app").fadeIn(490);
+                        if ($(this).scrollTop() > 1900) $(".program-container").css({ 'opacity': '1' });
 
-                // Tạo cabin
-                var geomCockpit = new THREE.BoxGeometry(60,50,50,1,1,1);
-                var matCockpit = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
-                var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
-                cockpit.castShadow = true;
-                cockpit.receiveShadow = true;
-                this.mesh.add(cockpit);
 
-                // Tạo động cơ
-                var geomEngine = new THREE.BoxGeometry(20,50,50,1,1,1);
-                var matEngine = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
-                var engine = new THREE.Mesh(geomEngine, matEngine);
-                engine.position.x = 40;
-                engine.castShadow = true;
-                engine.receiveShadow = true;
-                this.mesh.add(engine);
+                    });
+                    $(".program-blog").click(function () {
 
-                // Tạo đuôi
-                var geomTailPlane = new THREE.BoxGeometry(15,20,5,1,1,1);
-                var matTailPlane = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
-                var tailPlane = new THREE.Mesh(geomTailPlane, matTailPlane);
-                tailPlane.position.set(-35,25,0);
-                tailPlane.castShadow = true;
-                tailPlane.receiveShadow = true;
-                this.mesh.add(tailPlane);
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
 
-                // Tạo cánh
-                var geomSideWing = new THREE.BoxGeometry(40,8,150,1,1,1);
-                var matSideWing = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
-                var sideWing = new THREE.Mesh(geomSideWing, matSideWing);
-                sideWing.castShadow = true;
-                sideWing.receiveShadow = true;
-                this.mesh.add(sideWing);
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-1").show()
+                        $("#program-2").hide()
+                        $("#program-3").hide()
 
-                // phần quạt
-                var geomPropeller = new THREE.BoxGeometry(20,10,10,1,1,1);
-                var matPropeller = new THREE.MeshPhongMaterial({color:Colors.brown, shading:THREE.FlatShading});
-                this.propeller = new THREE.Mesh(geomPropeller, matPropeller);
-                this.propeller.castShadow = true;
-                this.propeller.receiveShadow = true;
+                    });
+                    $(".program-profile").click(function () {
 
-                // cánh quạt
-                var geomBlade = new THREE.BoxGeometry(1,100,20,1,1,1);
-                var matBlade = new THREE.MeshPhongMaterial({color:Colors.brownDark, shading:THREE.FlatShading});
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
 
-                var blade = new THREE.Mesh(geomBlade, matBlade);
-                blade.position.set(8,0,0);
-                blade.castShadow = true;
-                blade.receiveShadow = true;
-                this.propeller.add(blade);
-                this.propeller.position.set(50,0,0);
-                this.mesh.add(this.propeller);
-            };
-            var airplane;
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-2").show()
+                        $("#program-3").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-chatapp").click(function () {
 
-            function createPlane(){
-                airplane = new AirPlane();
-                airplane.mesh.scale.set(.25,.25,.25);
-                airplane.mesh.position.y = 100;
-                scene.add(airplane.mesh);
+                        $(".program-container").animate({ 'top': '60vh', 'height': '40vh' });
+
+                        $(".program-close").css({ 'right': '30px' });
+                        $("#program-3").show()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-close").click(function () {
+
+                        $(".program-container").animate({ 'top': '10vh' });
+                        $(".program-container").css({
+                            'flex-flow': 'row'
+
+                        });
+                        $(".program-close").css({ 'right': '-50px' });
+                        $("#program-3").hide()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".menu-mini-icon").click(function () {
+                        $(".menu").toggle("slow");
+                    });
+
+
+                });
             }
-            function loop(){
-                sea.mesh.rotation.z += .005;
-                sky.mesh.rotation.z += .01;
+        }
+        function min992px(x) {
+            if (x.matches) {
+                $(function () {
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 100) $(".menu-fixed").fadeIn();
+                        else $(".menu-fixed").fadeOut();
+                        if ($(this).scrollTop() > 800) $("#text-art").fadeIn(490);
+                        if ($(this).scrollTop() > 900) $(".art-front--img").css({ 'opacity': '1', 'height': '35vh' });
+                        if ($(this).scrollTop() > 1700) $("#text-standy").fadeIn(490);
+                        if ($(this).scrollTop() > 1800) {
+                            $(".standy-block").fadeIn();
+                            $(".standy-text").fadeIn();
+                        };
+                        if ($(this).scrollTop() > 2500) {
+                            $(".voucher-block").fadeIn(500);
+                            $(".voucher-text").fadeIn(500);
+                        };
+                        if ($(this).scrollTop() > 3500) $("#text-app").fadeIn(490);
+                        if ($(this).scrollTop() > 3600) $(".program-container").css({ 'opacity': '1' });
 
-                // cập nhật máy bay trong mỗi khung hình
-                updatePlane();
 
-                renderer.render(scene, camera);
-                requestAnimationFrame(loop);
+                    });
+                    $(".program-blog").click(function () {
+
+                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").css({
+                            'flex-flow': 'column'
+
+                        });
+                        $(".program-close").css({ 'right': '50px' });
+                        $("#program-1").show()
+                        $("#program-2").hide()
+                        $("#program-3").hide()
+
+                    });
+                    $(".program-profile").click(function () {
+
+                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").css({
+                            'flex-flow': 'column'
+
+                        });
+                        $(".program-close").css({ 'right': '50px' });
+                        $("#program-2").show()
+                        $("#program-3").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-chatapp").click(function () {
+
+                        $(".program-container").animate({'top': '-30vh', 'left': '80%', 'width': '15vw' });
+                        $(".program-container").css({
+                            'flex-flow': 'column'
+
+                        });
+                        $(".program-close").css({ 'right': '50px' });
+                        $("#program-3").show()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".program-close").click(function () {
+
+                        $(".program-container").animate({'left':'0', 'top': '0vh', 'width': '100%' });
+                        $(".program-container").css({
+                            'flex-flow': 'row'
+
+                        });
+                        $(".program-close").css({ 'right': '-50px' });
+                        $("#program-3").hide()
+                        $("#program-2").hide()
+                        $("#program-1").hide()
+                    });
+                    $(".menu-mini-icon").click(function () {
+                        $(".menu").toggle("slow");
+                    });
+
+
+                });
             }
-            var mousePos={x:0, y:0};
-
-            // xử lý sự kiện mousemove
-
-            function handleMouseMove(event) {
-
-                // ở đây chúng ta đang chuyển đổi giá trị vị trí chuột nhận được
-                // đến một giá trị chuẩn hoá giữa -1 và 1;
-                // đây là công thức cho trục ngang:
-
-                var tx = -1 + (event.clientX / WIDTH)*2;
-
-                // với trục dọc, chúng ta cần phải đảo ngược công thức
-                // vì trục tung 2D đi theo hướng ngược lại trục tung 3D
-
-                var ty = 1 - (event.clientY / HEIGHT)*2;
-                mousePos = {x:tx, y:ty};
-            }
-            function updatePlane(){
-
-                // di chuyển máy bay trong khoảng -100 tới 100 trên trục ngang,
-                // và từ 25 đến 175 trên trục dọc,
-                // tùy thuộc vào vị trí chuột trong khoảng từ -1 đến 1 trên cả hai trục;
-                // để làm điều đó chúng ta sử dụng một hàm chuẩn hoá (bên dưới)
-
-                var targetX = normalize(mousePos.x, -1, 1, -100, 100);
-                var targetY = normalize(mousePos.y, -1, 1, 25, 175);
-
-                // cập nhật vị trí máy bay
-                airplane.mesh.position.y = targetY;
-                airplane.mesh.position.x = targetX;
-                airplane.propeller.rotation.x += 0.3;
-                }
-
-                function normalize(v,vmin,vmax,tmin, tmax){
-
-                var nv = Math.max(Math.min(v,vmax), vmin);
-                var dv = vmax-vmin;
-                var pc = (nv-vmin)/dv;
-                var dt = tmax-tmin;
-                var tv = tmin + (pc*dt);
-                return tv;
-
-            }
+        }
+        var x = window.matchMedia("(min-width: 1500px)")
+        var y = window.matchMedia("(max-width: 600px)")
+        var a = window.matchMedia("(max-width: 768px)")
+        var b = window.matchMedia("(max-width: 992px)")
+        var c = window.matchMedia("(min-width: 992px)")
         
-        </script>
-    </body>
+        
+        
+        max600px(y)
+        max768px(a)
+        max992px(b)
+        
+        
+        
+        min992px(c)
+        min1500px(x)
+        
+        y.addEventListener(max600px)
+        a.addEventListener(max768px)
+        b.addEventListener(max992px)
+        
+        
+        c.addEventListener(min992px)
+        x.addEventListener(min1500px)
+    </script>
+</body>
+<footer>
+    <p class="footer">@2021 - Long Phan All Right Reservered</p>
+</footer>
+
 </html>

@@ -1,3 +1,18 @@
+* {
+    -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+}
+
 #hiddenInfor {
     display: none;
 }
@@ -193,7 +208,7 @@ opacity: 1;
     transform: translate(-40%);
     margin-top: -38px;
     color: white;
-    
+    cursor: pointer;
 }
 .yback .yloader {
     position: relative;
