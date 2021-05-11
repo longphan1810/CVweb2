@@ -87,6 +87,9 @@ $default-color: #f10071;
         height: 40vh;
         .flyer-container {
             top: 0vh;
+            .flyer-container--item {
+                height: 15vh;
+            }
         }
         .flyer-text {
             p {

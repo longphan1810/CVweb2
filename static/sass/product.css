@@ -2155,6 +2155,9 @@ body {
   .flyer .flyer-container {
     top: 0vh;
   }
+  .flyer .flyer-container .flyer-container--item {
+    height: 15vh;
+  }
   .flyer .flyer-text p {
     font-size: 0.5em;
   }
