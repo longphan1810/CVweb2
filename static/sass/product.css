@@ -399,7 +399,7 @@ body {
 
 .art .art-block .art-block-inner .art-back--content p {
   position: relative;
-  font-family: fantasy;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 5px;
   color: #666565;
   left: 50%;
@@ -2130,7 +2130,7 @@ body {
     top: 6vh;
   }
   .banner .banner-blockTitle .banner-blockTitle--title {
-    font-size: 1em;
+    font-size: 1.1em;
   }
   .banner .banner-blockTitle .banner-blockTitle--title::before {
     right: 80%;
@@ -2187,7 +2187,7 @@ body {
     height: 25vh;
   }
   .art .art-block .art-block-inner {
-    height: 25vh;
+    height: 20vh;
   }
   .art .art-block .art-block-inner .art-front--img {
     height: 0;

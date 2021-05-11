@@ -58,7 +58,7 @@ $default-color: #f10071;
             left: 25%;
             top: 6vh;
             .banner-blockTitle--title {
-                font-size: 1em;
+                font-size: 1.1em;
                 &::before {
                     right: 80%;
                 }
@@ -126,7 +126,7 @@ $default-color: #f10071;
         .art-block {
 
             .art-block-inner {
-                height: 25vh;
+                height: 20vh;
                 .art-front--img {
                     height: 0;
                 }
