@@ -2207,6 +2207,10 @@ body {
   .art .art-block .art-block-inner .art-back--content .art-back-title {
     font-size: 1em;
   }
+  .art .art-block .art-block-inner:active .art-block-inner {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
   .standy-voucher {
     height: 150vh;
   }

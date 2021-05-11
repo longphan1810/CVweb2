@@ -144,7 +144,11 @@ $default-color: #f10071;
                         font-size: 1em;
                     }
                 }
-                
+            &:active {
+                .art-block-inner {
+                    transform: rotateY(180deg);
+                }
+            }
             }
             }
             
