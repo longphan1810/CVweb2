@@ -191,8 +191,8 @@ body {
   position: absolute;
   width: 30%;
   height: 50vh;
-  background-image: -webkit-gradient(linear, right top, left top, from(#0066CC), to(transparent));
-  background-image: linear-gradient(to left, #0066CC, transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(#0066CC), to(#c1cfdf));
+  background-image: linear-gradient(to left, #0066CC, #c1cfdf);
   -webkit-transform: skewY(25deg);
           transform: skewY(25deg);
   top: 5vh;
@@ -231,8 +231,8 @@ body {
   display: block;
   height: 0.9em;
   width: 20vw;
-  background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(white));
-  background-image: linear-gradient(to right, transparent, white);
+  background-image: -webkit-gradient(linear, left top, right top, from(#c1cfdf), to(white));
+  background-image: linear-gradient(to right, #c1cfdf, white);
 }
 
 .banner .banner-block2 {
